@@ -73,34 +73,64 @@ def recommend_songs(query):
         name="songs"
     )
 
-    embedding = model.encode(
+    user = load_user()
+
+    query_embedding_list = model.encode(
         query
     ).tolist()
 
-    results = collection.query(
-
-        query_embeddings=[
-            embedding
-        ],
-
-        n_results=10
-
+    query_embedding_tensor = model.encode(
+        query,
+        convert_to_tensor=True
     )
 
+    results = collection.query(
+        query_embeddings=[
+            query_embedding_list
+        ],
+        n_results=10
+    )
+
+    print("RETRIEVED SONGS")
+
+    for song in results["metadatas"][0]:
+        print(song["title"])
+
     songs = results["metadatas"][0]
-    
-    user = load_user()
+
+    # Add favorite artist / genre songs
+    extra_songs = []
+
+    all_songs = collection.get()["metadatas"]
+
+    for song in all_songs:
+
+        if song.get("artist") in user["favorite_artists"]:
+
+            extra_songs.append(song)
+
+        elif song.get("genre") in user["favorite_genres"]:
+
+            extra_songs.append(song)
+
+    songs.extend(extra_songs)
+
+    # Remove duplicates
+    unique_songs = {}
+
+    for song in songs:
+
+        unique_songs[
+            song["title"]
+        ] = song
+
+    songs = list(
+        unique_songs.values()
+    )
 
     ranked = []
 
     for song in songs:
-
-        query_embedding = model.encode(
-            query,
-            convert_to_tensor=True
-        )
-
-        score = 0
 
         moods = song.get(
             "moods",
@@ -115,18 +145,14 @@ def recommend_songs(query):
         description = song.get(
             "description",
             ""
-        ).lower()
-
-        query_lower = query.lower()
+        )
 
         search_text = " ".join(
-
             moods
             +
             themes
             +
             [description]
-
         )
 
         song_embedding = model.encode(
@@ -135,30 +161,20 @@ def recommend_songs(query):
         )
 
         similarity = util.cos_sim(
-            query_embedding,
+            query_embedding_tensor,
             song_embedding
         ).item()
 
         score = similarity
 
-        if song["artist"] in user[
-            "favorite_artists"
-        ]:
+        # Preference boosts
+        if song.get("artist") in user["favorite_artists"]:
 
-            score += 0.20
+            score += 0.50
 
-        if song["genre"] in user[
-            "favorite_genres"
-        ]:
+        if song.get("genre") in user["favorite_genres"]:
 
-            score += 0.15
-            
-            
-        if any(
-            word in description
-            for word in query_lower.split()
-        ):
-            score += 1
+            score += 0.30
 
         ranked.append(
             {
