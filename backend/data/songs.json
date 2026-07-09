@@ -1,0 +1,212 @@
+[
+  {
+    "title": "Yellow",
+    "artist": "Coldplay",
+    "moods": ["nostalgic", "warm", "hopeful"],
+    "genre": "Alternative Rock"
+  },
+  {
+    "title": "Fix You",
+    "artist": "Coldplay",
+    "moods": ["emotional", "healing", "hopeful"],
+    "genre": "Alternative Rock"
+  },
+  {
+    "title": "The Scientist",
+    "artist": "Coldplay",
+    "moods": ["heartbreak", "reflective", "nostalgic"],
+    "genre": "Alternative Rock"
+  },
+  {
+    "title": "Viva La Vida",
+    "artist": "Coldplay",
+    "moods": ["epic", "motivational", "uplifting"],
+    "genre": "Alternative Rock"
+  },
+  {
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "moods": ["energetic", "night-drive", "nostalgic"],
+    "genre": "Synth Pop"
+  },
+  {
+    "title": "Save Your Tears",
+    "artist": "The Weeknd",
+    "moods": ["heartbreak", "sad", "reflective"],
+    "genre": "Pop"
+  },
+  {
+    "title": "505",
+    "artist": "Arctic Monkeys",
+    "moods": ["longing", "nostalgic", "late-night"],
+    "genre": "Indie Rock"
+  },
+  {
+    "title": "Do I Wanna Know?",
+    "artist": "Arctic Monkeys",
+    "moods": ["moody", "romantic", "night-drive"],
+    "genre": "Indie Rock"
+  },
+  {
+    "title": "Sweater Weather",
+    "artist": "The Neighbourhood",
+    "moods": ["chill", "romantic", "late-night"],
+    "genre": "Indie Pop"
+  },
+  {
+    "title": "Somebody Else",
+    "artist": "The 1975",
+    "moods": ["heartbreak", "jealousy", "reflective"],
+    "genre": "Indie Pop"
+  },
+  {
+    "title": "Perfect",
+    "artist": "Ed Sheeran",
+    "moods": ["romantic", "warm", "happy"],
+    "genre": "Pop"
+  },
+  {
+    "title": "Photograph",
+    "artist": "Ed Sheeran",
+    "moods": ["nostalgic", "emotional", "love"],
+    "genre": "Pop"
+  },
+  {
+    "title": "Someone Like You",
+    "artist": "Adele",
+    "moods": ["heartbreak", "sad", "emotional"],
+    "genre": "Pop"
+  },
+  {
+    "title": "Rolling in the Deep",
+    "artist": "Adele",
+    "moods": ["empowering", "heartbreak", "strong"],
+    "genre": "Pop"
+  },
+  {
+    "title": "Heat Waves",
+    "artist": "Glass Animals",
+    "moods": ["dreamy", "nostalgic", "summer"],
+    "genre": "Indie Pop"
+  },
+  {
+    "title": "As It Was",
+    "artist": "Harry Styles",
+    "moods": ["nostalgic", "reflective", "hopeful"],
+    "genre": "Pop"
+  },
+  {
+    "title": "Night Changes",
+    "artist": "One Direction",
+    "moods": ["nostalgic", "youthful", "emotional"],
+    "genre": "Pop"
+  },
+  {
+    "title": "Story of My Life",
+    "artist": "One Direction",
+    "moods": ["nostalgic", "reflective", "hopeful"],
+    "genre": "Pop"
+  },
+  {
+    "title": "Counting Stars",
+    "artist": "OneRepublic",
+    "moods": ["motivational", "uplifting", "energetic"],
+    "genre": "Pop Rock"
+  },
+  {
+    "title": "Apologize",
+    "artist": "OneRepublic",
+    "moods": ["heartbreak", "sad", "reflective"],
+    "genre": "Pop Rock"
+  },
+  {
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "moods": ["motivational", "powerful", "gym"],
+    "genre": "Rock"
+  },
+  {
+    "title": "Whatever It Takes",
+    "artist": "Imagine Dragons",
+    "moods": ["determined", "motivational", "energetic"],
+    "genre": "Rock"
+  },
+  {
+    "title": "Demons",
+    "artist": "Imagine Dragons",
+    "moods": ["emotional", "dark", "reflective"],
+    "genre": "Rock"
+  },
+  {
+    "title": "Unstoppable",
+    "artist": "Sia",
+    "moods": ["motivational", "empowering", "strong"],
+    "genre": "Pop"
+  },
+  {
+    "title": "Titanium",
+    "artist": "David Guetta ft. Sia",
+    "moods": ["empowering", "motivational", "energetic"],
+    "genre": "EDM"
+  },
+  {
+    "title": "Closer",
+    "artist": "The Chainsmokers",
+    "moods": ["nostalgic", "romantic", "summer"],
+    "genre": "EDM"
+  },
+  {
+    "title": "Paris",
+    "artist": "The Chainsmokers",
+    "moods": ["dreamy", "romantic", "late-night"],
+    "genre": "EDM"
+  },
+  {
+    "title": "See You Again",
+    "artist": "Wiz Khalifa",
+    "moods": ["emotional", "friendship", "nostalgic"],
+    "genre": "Hip Hop"
+  },
+  {
+    "title": "Sunflower",
+    "artist": "Post Malone",
+    "moods": ["happy", "chill", "feel-good"],
+    "genre": "Pop"
+  },
+  {
+    "title": "Stay",
+    "artist": "The Kid LAROI & Justin Bieber",
+    "moods": ["romantic", "energetic", "youthful"],
+    "genre": "Pop"
+  },
+  {
+    "title": "Let Her Go",
+    "artist": "Passenger",
+    "moods": ["heartbreak", "reflective", "sad"],
+    "genre": "Folk Pop"
+  },
+  {
+    "title": "Take Me Home, Country Roads",
+    "artist": "John Denver",
+    "moods": ["nostalgic", "comforting", "warm"],
+    "genre": "Country"
+  },
+  {
+    "title": "Dream On",
+    "artist": "Aerosmith",
+    "moods": ["inspirational", "motivational", "epic"],
+    "genre": "Rock"
+  },
+  {
+    "title": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "moods": ["epic", "dramatic", "classic"],
+    "genre": "Rock"
+  },
+  {
+    "title": "Don't Stop Me Now",
+    "artist": "Queen",
+    "moods": ["happy", "energetic", "celebration"],
+    "genre": "Rock"
+  }
+]

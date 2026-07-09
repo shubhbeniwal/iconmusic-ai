@@ -1,0 +1,611 @@
+[
+    {
+        "title": "Yellow",
+        "artist": "Coldplay",
+        "moods": [
+            "nostalgic",
+            "warm",
+            "hopeful"
+        ],
+        "genre": "Alternative Rock",
+        "description": "A melancholic and introspective song with a soaring chorus, featuring poignant lyrics and a distinctive piano riff",
+        "themes": [
+            "love",
+            "longing",
+            "optimism"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Fix You",
+        "artist": "Coldplay",
+        "moods": [
+            "emotional",
+            "healing",
+            "hopeful"
+        ],
+        "genre": "Alternative Rock",
+        "description": "A hauntingly beautiful ballad about comfort, solace, and redemption, with a soaring chorus and poignant lyrics",
+        "themes": [
+            "hope",
+            "comfort",
+            "redemption",
+            "loss"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "The Scientist",
+        "artist": "Coldplay",
+        "moods": [
+            "heartbreak",
+            "reflective",
+            "nostalgic"
+        ],
+        "genre": "Alternative Rock",
+        "description": "A melancholic piano ballad about regret and longing, with a focus on a past relationship and the desire to turn back time",
+        "themes": [
+            "regret",
+            "longing",
+            "love",
+            "nostalgia"
+        ],
+        "energy": "low"
+    },
+    {
+        "title": "Viva La Vida",
+        "artist": "Coldplay",
+        "moods": [
+            "epic",
+            "motivational",
+            "uplifting"
+        ],
+        "genre": "Alternative Rock",
+        "description": "Viva La Vida is a hauntingly beautiful song with a sweeping orchestral arrangement and introspective lyrics that explore the themes of power, mortality, and the fleeting nature of human existence",
+        "themes": [
+            "power",
+            "mortality",
+            "nostalgia",
+            "regret"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Blinding Lights",
+        "artist": "The Weeknd",
+        "moods": [
+            "energetic",
+            "night-drive",
+            "nostalgic"
+        ],
+        "genre": "Synth Pop",
+        "description": "A dark, synth-heavy pop song with 80s influences and a catchy, upbeat melody, featuring The Weeknd's signature soulful and emotive vocals",
+        "themes": [
+            "love",
+            "heartbreak",
+            "longing",
+            "nostalgia"
+        ],
+        "energy": "high"
+    },
+    {
+        "title": "Save Your Tears",
+        "artist": "The Weeknd",
+        "moods": [
+            "heartbreak",
+            "sad",
+            "reflective"
+        ],
+        "genre": "Pop",
+        "description": "A dark, 80s-inspired synth-pop song with a focus on heartbreak, regret, and toxic relationships",
+        "themes": [
+            "heartbreak",
+            "regret",
+            "toxic relationships"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "505",
+        "artist": "Arctic Monkeys",
+        "moods": [
+            "longing",
+            "nostalgic",
+            "late-night"
+        ],
+        "genre": "Indie Rock",
+        "description": "A melancholic acoustic ballad about longing and nostalgia, with lyrics that reflect on a past relationship and the pain of being apart",
+        "themes": [
+            "love",
+            "longing",
+            "nostalgia",
+            "heartbreak"
+        ],
+        "energy": "low"
+    },
+    {
+        "title": "Do I Wanna Know?",
+        "artist": "Arctic Monkeys",
+        "moods": [
+            "moody",
+            "romantic",
+            "night-drive"
+        ],
+        "genre": "Indie Rock",
+        "description": "A melancholic indie rock ballad with a focus on heartbreak, longing, and uncertainty",
+        "themes": [
+            "love",
+            "heartbreak",
+            "relationships",
+            "intimacy"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Sweater Weather",
+        "artist": "The Neighbourhood",
+        "moods": [
+            "chill",
+            "romantic",
+            "late-night"
+        ],
+        "genre": "Indie Pop",
+        "description": "A dark, indie-pop anthem with a moody and atmospheric sound, featuring brooding vocals and a catchy, yet melancholic melody",
+        "themes": [
+            "love",
+            "longing",
+            "nostalgia",
+            "heartbreak"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Somebody Else",
+        "artist": "The 1975",
+        "moods": [
+            "heartbreak",
+            "jealousy",
+            "reflective"
+        ],
+        "genre": "Indie Pop",
+        "description": "A melancholic and introspective song about lost love and longing, with a focus on the pain of seeing an ex-partner move on with someone else",
+        "themes": [
+            "heartbreak",
+            "loss",
+            "jealousy",
+            "nostalgia"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Perfect",
+        "artist": "Ed Sheeran",
+        "moods": [
+            "romantic",
+            "warm",
+            "happy"
+        ],
+        "genre": "Pop",
+        "description": "A romantic ballad about finding love and perfection in a partner",
+        "themes": [
+            "love",
+            "romance",
+            "devotion"
+        ],
+        "energy": "low"
+    },
+    {
+        "title": "Photograph",
+        "artist": "Ed Sheeran",
+        "moods": [
+            "nostalgic",
+            "emotional",
+            "love"
+        ],
+        "genre": "Pop",
+        "description": "A romantic and introspective ballad about a past relationship, with the speaker cherishing a photograph as a reminder of the memories they shared",
+        "themes": [
+            "love",
+            "nostalgia",
+            "heartbreak"
+        ],
+        "energy": "low"
+    },
+    {
+        "title": "Someone Like You",
+        "artist": "Adele",
+        "moods": [
+            "heartbreak",
+            "sad",
+            "emotional"
+        ],
+        "genre": "Pop",
+        "description": "A heart-wrenching ballad about longing and regret after a breakup, with Adele's powerful vocals conveying a sense of yearning and sorrow",
+        "themes": [
+            "heartbreak",
+            "longing",
+            "regret",
+            "lost love"
+        ],
+        "energy": "low"
+    },
+    {
+        "title": "Rolling in the Deep",
+        "artist": "Adele",
+        "moods": [
+            "empowering",
+            "heartbreak",
+            "strong"
+        ],
+        "genre": "Pop",
+        "description": "A soulful, heart-wrenching ballad about overcoming a painful breakup and finding empowerment",
+        "themes": [
+            "heartbreak",
+            "betrayal",
+            "independence",
+            "revenge"
+        ],
+        "energy": "high"
+    },
+    {
+        "title": "Heat Waves",
+        "artist": "Glass Animals",
+        "moods": [
+            "dreamy",
+            "nostalgic",
+            "summer"
+        ],
+        "genre": "Indie Pop",
+        "description": "A psychedelic indie rock song with a dreamy and atmospheric sound, featuring a blend of electronic and organic elements, with introspective and emotionally charged lyrics",
+        "themes": [
+            "love",
+            "longing",
+            "nostalgia",
+            "heartbreak"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "As It Was",
+        "artist": "Harry Styles",
+        "moods": [
+            "nostalgic",
+            "reflective",
+            "hopeful"
+        ],
+        "genre": "Pop",
+        "description": "A melancholic and introspective pop ballad that explores themes of lost love, nostalgia, and longing",
+        "themes": [
+            "heartbreak",
+            "nostalgia",
+            "self-discovery"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Night Changes",
+        "artist": "One Direction",
+        "moods": [
+            "nostalgic",
+            "youthful",
+            "emotional"
+        ],
+        "genre": "Pop",
+        "description": "A melancholic acoustic ballad about the pain of losing a past love and the memories that linger",
+        "themes": [
+            "heartbreak",
+            "nostalgia",
+            "longing"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Story of My Life",
+        "artist": "One Direction",
+        "moods": [
+            "nostalgic",
+            "reflective",
+            "hopeful"
+        ],
+        "genre": "Pop",
+        "description": "A melancholic acoustic ballad about lost love and longing, with a focus on nostalgic and introspective lyrics",
+        "themes": [
+            "heartbreak",
+            "nostalgia",
+            "regret"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Counting Stars",
+        "artist": "OneRepublic",
+        "moods": [
+            "motivational",
+            "uplifting",
+            "energetic"
+        ],
+        "genre": "Pop Rock",
+        "description": "An upbeat indie-pop anthem with a soaring chorus and a blend of acoustic and electronic elements, featuring Ryan Tedder's distinctive vocals",
+        "themes": [
+            "love",
+            "inspiration",
+            "hope"
+        ],
+        "energy": "high"
+    },
+    {
+        "title": "Apologize",
+        "artist": "OneRepublic",
+        "moods": [
+            "heartbreak",
+            "sad",
+            "reflective"
+        ],
+        "genre": "Pop Rock",
+        "description": "A heartfelt, emotive song about regret and longing, with a focus on apologizing for past mistakes in a relationship",
+        "themes": [
+            "regret",
+            "longing",
+            "apology",
+            "heartbreak"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Believer",
+        "artist": "Imagine Dragons",
+        "moods": [
+            "motivational",
+            "powerful",
+            "gym"
+        ],
+        "genre": "Rock",
+        "description": "An uplifting and anthemic song about perseverance and self-empowerment, with a strong focus on overcoming personal struggles and emerging stronger",
+        "themes": [
+            "resilience",
+            "hope",
+            "self-discovery"
+        ],
+        "energy": "high"
+    },
+    {
+        "title": "Whatever It Takes",
+        "artist": "Imagine Dragons",
+        "moods": [
+            "determined",
+            "motivational",
+            "energetic"
+        ],
+        "genre": "Rock",
+        "description": "An uplifting and motivational anthem with a mix of electronic and rock elements, featuring powerful vocals and a driving beat",
+        "themes": [
+            "perseverance",
+            "resilience",
+            "hope"
+        ],
+        "energy": "high"
+    },
+    {
+        "title": "Demons",
+        "artist": "Imagine Dragons",
+        "moods": [
+            "emotional",
+            "dark",
+            "reflective"
+        ],
+        "genre": "Rock",
+        "description": "A haunting and introspective song about confronting personal demons and inner struggles, with a focus on the pain and darkness that can accompany feelings of guilt, shame, and self-doubt",
+        "themes": [
+            "mental health",
+            "self-discovery",
+            "inner turmoil"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Unstoppable",
+        "artist": "Sia",
+        "moods": [
+            "motivational",
+            "empowering",
+            "strong"
+        ],
+        "genre": "Pop",
+        "description": "An empowering anthem about perseverance and inner strength, featuring Sia's powerful vocals and a soaring chorus",
+        "themes": [
+            "motivation",
+            "resilience",
+            "self-empowerment"
+        ],
+        "energy": "high"
+    },
+    {
+        "title": "Titanium",
+        "artist": "David Guetta ft. Sia",
+        "moods": [
+            "empowering",
+            "motivational",
+            "energetic"
+        ],
+        "genre": "EDM",
+        "description": "An empowering dance-pop anthem about finding inner strength and resilience",
+        "themes": [
+            "self-empowerment",
+            "perseverance",
+            "inner strength"
+        ],
+        "energy": "high"
+    },
+    {
+        "title": "Closer",
+        "artist": "The Chainsmokers",
+        "moods": [
+            "nostalgic",
+            "romantic",
+            "summer"
+        ],
+        "genre": "EDM",
+        "description": "A catchy and upbeat EDM song with a memorable hook, featuring Andrew Taggart's vocals and a distinctive drop",
+        "themes": [
+            "love",
+            "relationships",
+            "nostalgia"
+        ],
+        "energy": "high"
+    },
+    {
+        "title": "Paris",
+        "artist": "The Chainsmokers",
+        "moods": [
+            "dreamy",
+            "romantic",
+            "late-night"
+        ],
+        "genre": "EDM",
+        "description": "An upbeat electronic dance music track with a catchy melody and nostalgic lyrics about a past relationship",
+        "themes": [
+            "love",
+            "nostalgia",
+            "heartbreak"
+        ],
+        "energy": "high"
+    },
+    {
+        "title": "See You Again",
+        "artist": "Wiz Khalifa",
+        "moods": [
+            "emotional",
+            "friendship",
+            "nostalgic"
+        ],
+        "genre": "Hip Hop",
+        "description": "A hip-hop tribute song to Paul Walker, featuring a soothing melody and heartfelt lyrics",
+        "themes": [
+            "loss",
+            "grief",
+            "remembrance",
+            "friendship"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Sunflower",
+        "artist": "Post Malone",
+        "moods": [
+            "happy",
+            "chill",
+            "feel-good"
+        ],
+        "genre": "Pop",
+        "description": "A melodic hip-hop song with a blend of emotive vocals and a catchy hook, featuring Post Malone's distinctive voice and style, with a focus on themes of love, relationships, and devotion",
+        "themes": [
+            "love",
+            "relationships",
+            "devotion"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Stay",
+        "artist": "The Kid LAROI & Justin Bieber",
+        "moods": [
+            "romantic",
+            "energetic",
+            "youthful"
+        ],
+        "genre": "Pop",
+        "description": "A melancholic and introspective pop song about longing to stay in a relationship despite the pain and struggles",
+        "themes": [
+            "heartbreak",
+            "love",
+            "longing"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Let Her Go",
+        "artist": "Passenger",
+        "moods": [
+            "heartbreak",
+            "reflective",
+            "sad"
+        ],
+        "genre": "Folk Pop",
+        "description": "A melancholic acoustic ballad about the pain of letting go of a past relationship and moving on",
+        "themes": [
+            "heartbreak",
+            "longing",
+            "freedom"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Take Me Home, Country Roads",
+        "artist": "John Denver",
+        "moods": [
+            "nostalgic",
+            "comforting",
+            "warm"
+        ],
+        "genre": "Country",
+        "description": "A nostalgic and uplifting folk ballad about a longing to return to West Virginia, with a soaring chorus and a sense of wanderlust",
+        "themes": [
+            "nostalgia",
+            "wanderlust",
+            "homesickness"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Dream On",
+        "artist": "Aerosmith",
+        "moods": [
+            "inspirational",
+            "motivational",
+            "epic"
+        ],
+        "genre": "Rock",
+        "description": "A power ballad with soaring vocals and a memorable guitar solo, featuring a blend of rock and blues elements",
+        "themes": [
+            "perseverance",
+            "hope",
+            "youthful nostalgia"
+        ],
+        "energy": "medium"
+    },
+    {
+        "title": "Bohemian Rhapsody",
+        "artist": "Queen",
+        "moods": [
+            "epic",
+            "dramatic",
+            "classic"
+        ],
+        "genre": "Rock",
+        "description": "A six-minute epic ballad with complex composition and operatic vocals, featuring a wide range of emotions and musical styles",
+        "themes": [
+            "life",
+            "death",
+            "redemption",
+            "freedom"
+        ],
+        "energy": "high"
+    },
+    {
+        "title": "Don't Stop Me Now",
+        "artist": "Queen",
+        "moods": [
+            "happy",
+            "energetic",
+            "celebration"
+        ],
+        "genre": "Rock",
+        "description": "An upbeat rock ballad with operatic vocals and a grand piano solo, featuring Freddie Mercury's powerful voice and poetic lyrics",
+        "themes": [
+            "empowerment",
+            "confidence",
+            "excess"
+        ],
+        "energy": "high"
+    }
+]
