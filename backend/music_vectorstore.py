@@ -3,6 +3,8 @@ import chromadb
 
 from sentence_transformers import SentenceTransformer
 
+from sentence_transformers import util
+
 client = chromadb.PersistentClient(
     path="./chroma_db"
 )
@@ -89,6 +91,11 @@ def recommend_songs(query):
 
     for song in songs:
 
+        query_embedding = model.encode(
+            query,
+            convert_to_tensor=True
+        )
+
         score = 0
 
         moods = song.get(
@@ -108,15 +115,27 @@ def recommend_songs(query):
 
         query_lower = query.lower()
 
-        for mood in moods:
+        search_text = " ".join(
 
-            if mood.lower() in query_lower:
-                score += 3
+            moods
+            +
+            themes
+            +
+            [description]
 
-        for theme in themes:
+        )
 
-            if theme.lower() in query_lower:
-                score += 2
+        song_embedding = model.encode(
+            search_text,
+            convert_to_tensor=True
+        )
+
+        similarity = util.cos_sim(
+            query_embedding,
+            song_embedding
+        ).item()
+
+        score = similarity
 
         if any(
             word in description
