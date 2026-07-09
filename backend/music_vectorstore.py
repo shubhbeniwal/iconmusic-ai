@@ -5,6 +5,8 @@ from sentence_transformers import SentenceTransformer
 
 from sentence_transformers import util
 
+from user_memory import load_user
+
 client = chromadb.PersistentClient(
     path="./chroma_db"
 )
@@ -86,6 +88,8 @@ def recommend_songs(query):
     )
 
     songs = results["metadatas"][0]
+    
+    user = load_user()
 
     ranked = []
 
@@ -137,6 +141,19 @@ def recommend_songs(query):
 
         score = similarity
 
+        if song["artist"] in user[
+            "favorite_artists"
+        ]:
+
+            score += 0.20
+
+        if song["genre"] in user[
+            "favorite_genres"
+        ]:
+
+            score += 0.15
+            
+            
         if any(
             word in description
             for word in query_lower.split()
