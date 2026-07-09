@@ -13,6 +13,12 @@ from music_vectorstore import (
     recommend_songs
 )
 
+from user_memory import (
+    load_user,
+    like_artist,
+    like_genre
+)
+
 app = FastAPI()
 
 
@@ -106,3 +112,41 @@ def semantic_search(
     )
 
     return songs
+
+@app.post("/like-artist")
+def add_artist(
+
+    artist: str
+
+):
+
+    like_artist(
+        artist
+    )
+
+    return {
+        "message":
+        f"{artist} saved"
+    }
+    
+    
+@app.post("/like-genre")
+def add_genre(
+
+    genre: str
+
+):
+
+    like_genre(
+        genre
+    )
+
+    return {
+        "message":
+        f"{genre} saved"
+    }
+    
+@app.get("/profile")
+def profile():
+
+    return load_user()

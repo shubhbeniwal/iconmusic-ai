@@ -1,0 +1,12 @@
+{
+    "default_user": {
+        "favorite_artists": [
+            "Coldplay"
+        ],
+        "favorite_genres": [
+            "Alternative Rock"
+        ],
+        "liked_songs": [],
+        "disliked_songs": []
+    }
+}
