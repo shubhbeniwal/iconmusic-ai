@@ -79,8 +79,61 @@ def recommend_songs(query):
             embedding
         ],
 
-        n_results=5
+        n_results=10
 
     )
 
-    return results["metadatas"][0]
+    songs = results["metadatas"][0]
+
+    ranked = []
+
+    for song in songs:
+
+        score = 0
+
+        moods = song.get(
+            "moods",
+            []
+        )
+
+        themes = song.get(
+            "themes",
+            []
+        )
+
+        description = song.get(
+            "description",
+            ""
+        ).lower()
+
+        query_lower = query.lower()
+
+        for mood in moods:
+
+            if mood.lower() in query_lower:
+                score += 3
+
+        for theme in themes:
+
+            if theme.lower() in query_lower:
+                score += 2
+
+        if any(
+            word in description
+            for word in query_lower.split()
+        ):
+            score += 1
+
+        ranked.append(
+            {
+                "score": score,
+                "song": song
+            }
+        )
+
+    ranked.sort(
+        key=lambda x: x["score"],
+        reverse=True
+    )
+
+    return ranked[:5]
