@@ -29,6 +29,8 @@ from user_memory import (
     learn_from_song
 )
 
+from music_coach import detect_mood
+
 app = FastAPI()
 
 
@@ -205,4 +207,43 @@ def add_dislike_song(
     return {
         "message":
         f"{song} disliked"
+    }
+
+
+@app.get(
+    "/music-coach"
+)
+def music_coach(
+
+    text: str
+
+):
+
+    mood_data = detect_mood(
+        text
+    )
+
+    recommendations = recommend_songs(
+
+        mood_data[
+            "search_query"
+        ]
+
+    )
+
+    return {
+
+        "detected_mood":
+        mood_data[
+            "mood"
+        ],
+
+        "coach_message":
+        mood_data[
+            "message"
+        ],
+
+        "recommendations":
+        recommendations
+
     }
