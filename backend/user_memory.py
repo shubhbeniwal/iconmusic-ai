@@ -59,3 +59,23 @@ def like_genre(genre):
     save_user(user)
     
     
+def like_song(song):
+
+    user = load_user()
+
+    if song not in user["liked_songs"]:
+
+        user["liked_songs"].append(song)
+
+    save_user(user)
+    
+
+def dislike_song(song):
+
+    user = load_user()
+
+    if song not in user["disliked_songs"]:
+
+        user["disliked_songs"].append(song)
+
+    save_user(user)

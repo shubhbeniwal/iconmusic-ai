@@ -6,7 +6,9 @@
         "favorite_genres": [
             "Alternative Rock"
         ],
-        "liked_songs": [],
+        "liked_songs": [
+            "Fix You"
+        ],
         "disliked_songs": []
     }
 }

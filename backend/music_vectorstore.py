@@ -165,16 +165,19 @@ def recommend_songs(query):
             song_embedding
         ).item()
 
-        score = similarity
+        preference_score = 0
 
-        # Preference boosts
         if song.get("artist") in user["favorite_artists"]:
-
-            score += 0.50
+            preference_score += 1
 
         if song.get("genre") in user["favorite_genres"]:
+            preference_score += 1
 
-            score += 0.30
+        score = (
+            similarity * 0.85
+        ) + (
+            preference_score * 0.15
+        )
 
         ranked.append(
             {

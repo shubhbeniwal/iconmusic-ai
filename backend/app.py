@@ -16,7 +16,9 @@ from music_vectorstore import (
 from user_memory import (
     load_user,
     like_artist,
-    like_genre
+    like_genre,
+    like_song,
+    dislike_song
 )
 
 app = FastAPI()
@@ -150,3 +152,32 @@ def add_genre(
 def profile():
 
     return load_user()
+
+@app.post("/like-song")
+def add_like_song(
+
+    song: str
+
+):
+
+    like_song(song)
+
+    return {
+        "message":
+        f"{song} liked"
+    }
+ 
+    
+@app.post("/dislike-song")
+def add_dislike_song(
+
+    song: str
+
+):
+
+    dislike_song(song)
+
+    return {
+        "message":
+        f"{song} disliked"
+    }
