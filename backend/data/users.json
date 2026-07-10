@@ -8,9 +8,16 @@
             "Alternative Rock",
             "Rock"
         ],
+        "artist_scores": {
+            "Coldplay": 2
+        },
+        "genre_scores": {
+            "Alternative Rock": 2
+        },
         "liked_songs": [
             "Fix You",
-            "Believer"
+            "Believer",
+            "Yellow"
         ],
         "disliked_songs": []
     }

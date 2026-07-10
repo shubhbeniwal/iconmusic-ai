@@ -84,36 +84,47 @@ def learn_from_song(song_data):
 
     user = load_user()
 
-    artist = song_data.get(
-        "artist"
-    )
-
-    genre = song_data.get(
-        "genre"
-    )
+    artist = song_data.get("artist")
+    genre = song_data.get("genre")
 
     if artist:
 
-        if artist not in user[
-            "favorite_artists"
-        ]:
+        if artist not in user["favorite_artists"]:
 
-            user[
-                "favorite_artists"
-            ].append(
+            user["favorite_artists"].append(
                 artist
             )
 
+        artist_scores = user.setdefault(
+            "artist_scores",
+            {}
+        )
+
+        artist_scores[
+            artist
+        ] = artist_scores.get(
+            artist,
+            0
+        ) + 1
+
     if genre:
 
-        if genre not in user[
-            "favorite_genres"
-        ]:
+        if genre not in user["favorite_genres"]:
 
-            user[
-                "favorite_genres"
-            ].append(
+            user["favorite_genres"].append(
                 genre
             )
+
+        genre_scores = user.setdefault(
+            "genre_scores",
+            {}
+        )
+
+        genre_scores[
+            genre
+        ] = genre_scores.get(
+            genre,
+            0
+        ) + 1
 
     save_user(user)
