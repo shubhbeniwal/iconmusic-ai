@@ -31,6 +31,11 @@ from user_memory import (
 
 from music_coach import detect_mood
 
+from memory import (
+    load_memory,
+    save_memory
+)
+
 app = FastAPI()
 
 
@@ -234,6 +239,38 @@ def music_coach(
         ]
 
     )
+    
+    save_memory(
+
+        {
+
+            "last_query": text,
+
+            "last_detected_mood":
+
+            mood_data[
+                "mood"
+            ],
+
+            "last_search_query":
+
+            mood_data[
+                "search_query"
+            ],
+
+            "last_recommendations":
+
+            [
+
+                item["song"]["title"]
+
+                for item in recommendations
+
+            ]
+
+        }
+
+    )
 
     return {
 
@@ -251,3 +288,10 @@ def music_coach(
         recommendations
 
     }
+    
+@app.get(
+    "/memory"
+)
+def memory():
+
+    return load_memory()
