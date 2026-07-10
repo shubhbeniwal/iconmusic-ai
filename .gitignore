@@ -3,3 +3,6 @@ __pycache__/
 .env
 chroma_db/
 *.pyc
+
+# Ignores files starting with "test_" and ending with ".py"
+test_*.py

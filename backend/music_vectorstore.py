@@ -7,6 +7,8 @@ from sentence_transformers import util
 
 from user_memory import load_user
 
+from mood_profiles import MOOD_PROFILES
+
 client = chromadb.PersistentClient(
     path="./chroma_db"
 )
@@ -132,7 +134,7 @@ def generate_explanation(
     return reasons[:3]
 
     
-def recommend_songs(query):
+def recommend_songs(query, detected_mood=None):
 
     collection = client.get_collection(
         name="songs"
@@ -257,6 +259,36 @@ def recommend_songs(query):
         score += math.log1p(
             genre_strength
         ) * 0.05
+        
+        if detected_mood:
+
+            preferred_moods = MOOD_PROFILES.get(
+
+                detected_mood,
+
+                []
+
+            )
+
+            song_moods = song.get(
+
+                "moods",
+
+                []
+
+            )
+
+            matches = len(
+
+                set(
+                    preferred_moods
+                ).intersection(
+                    song_moods
+                )
+
+            )
+
+            score += matches * 0.10
 
         explanation = generate_explanation(
 

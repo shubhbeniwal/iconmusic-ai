@@ -227,6 +227,10 @@ def music_coach(
 
         mood_data[
             "search_query"
+        ],
+        
+        mood_data[
+            "mood"
         ]
 
     )
