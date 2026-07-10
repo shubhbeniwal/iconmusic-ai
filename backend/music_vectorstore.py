@@ -66,6 +66,71 @@ def build_song_index():
     print(
         "Songs Indexed Successfully"
     )
+
+
+def generate_explanation(
+
+    song,
+    user,
+    similarity
+
+):
+
+    reasons = []
+
+    if similarity > 0.40:
+
+        reasons.append(
+            "Strong semantic match with your request"
+        )
+
+    elif similarity > 0.25:
+
+        reasons.append(
+            "Relevant to your request"
+        )
+
+    artist_score = user.get(
+        "artist_scores",
+        {}
+    ).get(
+        song.get("artist"),
+        0
+    )
+
+    genre_score = user.get(
+        "genre_scores",
+        {}
+    ).get(
+        song.get("genre"),
+        0
+    )
+
+    if artist_score > 0:
+
+        reasons.append(
+            f"You frequently listen to {song['artist']}"
+        )
+
+    if genre_score > 0:
+
+        reasons.append(
+            f"You enjoy {song['genre']} music"
+        )
+
+    moods = song.get(
+        "moods",
+        []
+    )
+
+    if moods:
+
+        reasons.append(
+            f"Mood match: {moods[0]}"
+        )
+
+    return reasons[:3]
+
     
 def recommend_songs(query):
 
@@ -193,6 +258,14 @@ def recommend_songs(query):
             genre_strength
         ) * 0.05
 
+        explanation = generate_explanation(
+
+            song,
+            user,
+            similarity
+
+        )
+        
         print(
             song["title"],
             "Similarity:",
@@ -208,7 +281,8 @@ def recommend_songs(query):
         ranked.append(
             {
                 "score": score,
-                "song": song
+                "song": song,
+                "why": explanation
             }
         )
 
