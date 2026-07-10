@@ -21,6 +21,14 @@ from user_memory import (
     dislike_song
 )
 
+from music_vectorstore import (
+    find_song_by_title
+)
+
+from user_memory import (
+    learn_from_song
+)
+
 app = FastAPI()
 
 
@@ -159,6 +167,23 @@ def add_like_song(
     song: str
 
 ):
+
+    like_song(song)
+
+    song_data = find_song_by_title(
+        song
+    )
+
+    if song_data:
+
+        learn_from_song(
+            song_data
+        )
+
+    return {
+        "message":
+        f"{song} liked and learned"
+    }
 
     like_song(song)
 

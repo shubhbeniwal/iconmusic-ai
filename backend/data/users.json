@@ -1,13 +1,16 @@
 {
     "default_user": {
         "favorite_artists": [
-            "Coldplay"
+            "Coldplay",
+            "Imagine Dragons"
         ],
         "favorite_genres": [
-            "Alternative Rock"
+            "Alternative Rock",
+            "Rock"
         ],
         "liked_songs": [
-            "Fix You"
+            "Fix You",
+            "Believer"
         ],
         "disliked_songs": []
     }

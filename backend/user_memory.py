@@ -79,3 +79,41 @@ def dislike_song(song):
         user["disliked_songs"].append(song)
 
     save_user(user)
+    
+def learn_from_song(song_data):
+
+    user = load_user()
+
+    artist = song_data.get(
+        "artist"
+    )
+
+    genre = song_data.get(
+        "genre"
+    )
+
+    if artist:
+
+        if artist not in user[
+            "favorite_artists"
+        ]:
+
+            user[
+                "favorite_artists"
+            ].append(
+                artist
+            )
+
+    if genre:
+
+        if genre not in user[
+            "favorite_genres"
+        ]:
+
+            user[
+                "favorite_genres"
+            ].append(
+                genre
+            )
+
+    save_user(user)

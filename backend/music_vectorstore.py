@@ -192,3 +192,27 @@ def recommend_songs(query):
     )
 
     return ranked[:5]
+
+def find_song_by_title(
+
+    title
+
+):
+
+    collection = client.get_collection(
+        name="songs"
+    )
+
+    songs = collection.get()[
+        "metadatas"
+    ]
+
+    for song in songs:
+
+        if song[
+            "title"
+        ].lower() == title.lower():
+
+            return song
+
+    return None
