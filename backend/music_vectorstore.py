@@ -165,20 +165,46 @@ def recommend_songs(query):
             song_embedding
         ).item()
 
-        preference_score = 0
-
-        if song.get("artist") in user["favorite_artists"]:
-            preference_score += 1
-
-        if song.get("genre") in user["favorite_genres"]:
-            preference_score += 1
-
-        score = (
-            similarity * 0.85
-        ) + (
-            preference_score * 0.15
+        artist_strength = user.get(
+            "artist_scores",
+            {}
+        ).get(
+            song.get("artist"),
+            0
         )
 
+        genre_strength = user.get(
+            "genre_scores",
+            {}
+        ).get(
+            song.get("genre"),
+            0
+        )
+
+        score = similarity
+
+        import math
+
+        score += math.log1p(
+            artist_strength
+        ) * 0.08
+
+        score += math.log1p(
+            genre_strength
+        ) * 0.05
+
+        print(
+            song["title"],
+            "Similarity:",
+            round(similarity, 3),
+            "Artist:",
+            artist_strength,
+            "Genre:",
+            genre_strength,
+            "Final:",
+            round(score, 3)
+        )
+        
         ranked.append(
             {
                 "score": score,
@@ -190,7 +216,6 @@ def recommend_songs(query):
         key=lambda x: x["score"],
         reverse=True
     )
-
     return ranked[:5]
 
 def find_song_by_title(
