@@ -2,7 +2,16 @@ export default function MoodInputCard() {
 
   return (
 
-    <div className="bg-zinc-900 rounded-3xl p-6">
+    <div
+    className="
+    bg-zinc-900
+    rounded-3xl
+    p-6
+    border
+    border-zinc-800
+    shadow-[0_0_40px_rgba(255,255,255,0.03)]
+    "
+    >
 
       <h2 className="text-xl font-semibold">
         How are you feeling today?
@@ -27,10 +36,15 @@ export default function MoodInputCard() {
         mt-4
         w-full
         rounded-xl
-        bg-white
+        bg-gradient-to-r
+        from-white
+        to-zinc-200
         text-black
         py-3
         font-semibold
+        transition-all
+        duration-300
+        hover:scale-[1.02]
         "
       >
         Discover Music

@@ -33,29 +33,32 @@ export default function RecommendationCard({
 
       <div
         className="
-        h-32
+        h-40
         bg-gradient-to-br
         from-zinc-700
-        to-zinc-900
+        via-zinc-800
+        to-black
         "
-      />
+        />
 
       <div className="p-5">
 
         <h3
-          className="
-          text-xl
-          font-bold
-          "
+            className="
+            text-2xl
+            font-bold
+            tracking-tight
+            "
         >
           {title}
         </h3>
 
         <p
-          className="
-          text-zinc-400
-          mt-1
-          "
+            className="
+            text-zinc-500
+            mt-1
+            text-sm
+            "
         >
           {artist}
         </p>
