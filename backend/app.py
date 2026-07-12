@@ -295,3 +295,87 @@ def music_coach(
 def memory():
 
     return load_memory()
+
+
+
+
+
+def build_followup_message(
+
+    mood
+
+):
+
+    messages = {
+
+        "motivated":
+        "You wanted motivation earlier. Here are more high-energy recommendations.",
+
+        "exhausted":
+        "You were feeling exhausted. These songs continue that relaxing vibe.",
+
+        "heartbroken":
+        "Keeping the emotional tone from your previous session."
+
+    }
+
+    return messages.get(
+
+        mood,
+
+        "Continuing your previous music session."
+
+    )
+    
+@app.get(
+    "/continue-session"
+)
+def continue_session():
+
+    memory = load_memory()
+
+    if not memory:
+
+        return {
+            "error":
+            "No previous session found"
+        }
+
+    recommendations = recommend_songs(
+
+        memory[
+            "last_search_query"
+        ],
+
+        memory[
+            "last_detected_mood"
+        ]
+
+    )
+    message = build_followup_message(
+
+        memory[
+            "last_detected_mood"
+        ]
+
+    )
+    
+    return {
+
+        "based_on":
+        memory[
+            "last_query"
+        ],
+
+        "detected_mood":
+        memory[
+            "last_detected_mood"
+        ],
+
+        "message":
+        message,
+
+        "recommendations":
+        recommendations
+
+    }
