@@ -35,37 +35,70 @@ export default function RecommendationCard({
       "
     >
 
-      <img
-        src={image}
-        alt={title}
-        className="
-        h-52
-        w-full
-        object-cover
-        "
+      <div className="relative">
+
+        <img
+            src={image}
+            alt={title}
+            className="
+            h-56
+            w-full
+            object-cover
+            "
         />
 
-      <div className="p-5">
-
-        <h3
+        <div
             className="
-            text-2xl
+            absolute
+            inset-0
+            bg-gradient-to-t
+            from-black/70
+            via-transparent
+            to-transparent
+            "
+        />
+
+        <div
+            className="
+            absolute
+            bottom-4
+            left-4
+            "
+        >
+
+            <div
+            className="
+            text-xs
+            uppercase
+            tracking-widest
+            text-zinc-300
+            "
+            >
+            Recommended For You
+            </div>
+
+            <div
+            className="
+            text-3xl
             font-bold
-            tracking-tight
             "
-        >
-          {title}
-        </h3>
+            >
+            {title}
+            </div>
 
-        <p
+            <div
             className="
-            text-zinc-500
-            mt-1
-            text-sm
+            text-zinc-300
             "
-        >
-          {artist}
-        </p>
+            >
+            {artist}
+            </div>
+
+        </div>
+
+        </div>
+
+      <div className="p-5">
 
         <div
         className="
