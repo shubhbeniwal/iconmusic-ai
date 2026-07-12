@@ -4,7 +4,7 @@ export default function AIInsightPanel() {
     <div
         className="
         mt-4
-        bg-zinc-900
+        bg-zinc-900/90
         border
         border-zinc-800
         rounded-3xl

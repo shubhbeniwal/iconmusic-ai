@@ -4,7 +4,7 @@ export default function MoodInputCard() {
 
     <div
     className="
-    bg-zinc-900
+    bg-zinc-900/90
     rounded-3xl
     p-6
     border

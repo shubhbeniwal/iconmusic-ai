@@ -15,7 +15,32 @@ export default function Home() {
 
   return (
 
-    <main className="min-h-screen pt-8 bg-black text-white pb-32 items-center">
+    <main
+      className="
+      relative
+      min-h-screen
+      pt-8
+      text-white
+      pb-32
+      overflow-hidden
+      bg-black
+      "
+    >
+
+      <div
+        className="
+        absolute
+        top-0
+        left-1/2
+        -translate-x-1/2
+        h-[500px]
+        w-[500px]
+        rounded-full
+        bg-emerald-500/20
+        blur-[140px]
+        pointer-events-none
+        "
+      />
 
       <div className="max-w-md mx-auto px-6 pt-10">
 

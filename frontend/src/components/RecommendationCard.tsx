@@ -26,7 +26,7 @@ export default function RecommendationCard({
 
     <div
       className="
-      bg-zinc-900
+      bg-zinc-900/90
       shadow-2xl
       rounded-3xl
       overflow-hidden
