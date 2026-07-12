@@ -1,0 +1,70 @@
+type Props = {
+
+  title: string
+  artist: string
+  image: string
+
+}
+
+export default function MiniRecommendationCard({
+
+  title,
+  artist,
+  image
+
+}: Props) {
+
+  return (
+
+    <div
+      className="
+      min-w-[180px]
+      bg-zinc-900/90
+      rounded-2xl
+      overflow-hidden
+      border
+      border-zinc-800
+      transition-all
+      duration-300
+      hover:border-zinc-600
+      "
+    >
+
+      <img
+        src={image}
+        alt={title}
+        className="
+        h-28
+        w-full
+        object-cover
+        "
+      />
+
+      <div className="p-3">
+
+        <p
+          className="
+          font-semibold
+          text-sm
+          "
+        >
+          {title}
+        </p>
+
+        <p
+          className="
+          text-zinc-500
+          text-xs
+          mt-1
+          "
+        >
+          {artist}
+        </p>
+
+      </div>
+
+    </div>
+
+  )
+
+}
