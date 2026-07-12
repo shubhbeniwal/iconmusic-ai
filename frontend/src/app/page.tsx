@@ -46,6 +46,48 @@ export default function Home() {
         "
       />
 
+      <div
+        className="
+        absolute
+        top-40
+        right-[-100px]
+        h-72
+        w-72
+        rounded-full
+        bg-purple-500/10
+        blur-[120px]
+        pointer-events-none
+        "
+      />
+
+      <div
+        className="
+        absolute
+        bottom-40
+        left-[-100px]
+        h-80
+        w-80
+        rounded-full
+        bg-cyan-500/10
+        blur-[140px]
+        pointer-events-none
+        "
+      />
+
+      <div
+        className="
+        absolute
+        top-[700px]
+        right-[-60px]
+        h-60
+        w-60
+        rounded-full
+        bg-green-500/10
+        blur-[120px]
+        pointer-events-none
+        "
+      />
+
       <div className="max-w-md mx-auto px-6 pt-10">
 
         <div className="mb-10">
