@@ -6,6 +6,8 @@ import MoodInputCard from "@/components/MoodInputCard"
 
 import RecommendationCard from "@/components/RecommendationCard"
 
+import AIInsightPanel from "@/components/AIInsightPanel"
+
 import BottomNav from "@/components/BottomNav"
 
 
@@ -26,26 +28,18 @@ export default function Home() {
 
       <div className="mt-6">
         <RecommendationCard
-
           title="Fix You"
-
           artist="Coldplay"
-
           image="/images/fix-you.jpg"
-
           match={92}
-
           reasons={[
-
             "Healing",
-
             "Hopeful",
-
             "You like Coldplay"
-
           ]}
-
         />
+
+        <AIInsightPanel />
       </div>
 
       </div>
