@@ -26,13 +26,25 @@ export default function Home() {
 
       <div className="mt-6">
         <RecommendationCard
+
           title="Fix You"
+
           artist="Coldplay"
+
+          image="/images/fix-you.jpg"
+
+          match={92}
+
           reasons={[
+
             "Healing",
+
             "Hopeful",
+
             "You like Coldplay"
+
           ]}
+
         />
       </div>
 
