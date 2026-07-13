@@ -1,12 +1,12 @@
 {
-    "last_query": "Feeling Sad",
-    "last_detected_mood": "sad",
-    "last_search_query": "sad emotional heartfelt music",
+    "last_query": "I am feeling good\n",
+    "last_detected_mood": "positive",
+    "last_search_query": "upbeat happy music",
     "last_recommendations": [
-        "The Scientist",
-        "Someone Like You",
+        "Perfect",
         "Fix You",
-        "Let Her Go",
-        "Apologize"
+        "Yellow",
+        "Don't Stop Me Now",
+        "Viva La Vida"
     ]
 }

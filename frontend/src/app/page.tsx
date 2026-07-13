@@ -214,42 +214,86 @@ export default function Home() {
 
         }
 
-        <SectionTitle
+        {
 
-          title="More Matches"
+          result && (
 
-          subtitle="Based on your music taste"
+            <SectionTitle
 
-        />
+              title="More Matches"
 
-        <div
-          className="
-          flex
-          gap-4
-          overflow-x-auto
-          pb-4
-          "
-        >
+              subtitle="Based on your music taste"
 
-          <MiniRecommendationCard
-            title="Yellow"
-            artist="Coldplay"
-            image="/images/yellow.jpg"
-          />
+            />
 
-          <MiniRecommendationCard
-            title="The Scientist"
-            artist="Coldplay"
-            image="/images/the-scientist.jpg"
-          />
+          )
 
-          <MiniRecommendationCard
-            title="Viva La Vida"
-            artist="Coldplay"
-            image="/images/viva-la-vida.jpg"
-          />
+        }
 
-        </div>
+
+
+        {
+
+          result && (
+
+            <div
+              className="
+              flex
+              gap-4
+              overflow-x-auto
+              pb-4
+              "
+            >
+
+              {
+
+                result.recommendations
+
+                  .slice(1)
+
+                  .map(
+
+                    (
+
+                      item: any,
+
+                      index: number
+
+                    ) => (
+
+                      <MiniRecommendationCard
+
+                        key={index}
+
+                        title={
+                          item.song.title
+                        }
+
+                        artist={
+                          item.song.artist
+                        }
+
+                        image="/images/placeholder.jpg"
+
+                      />
+
+                    )
+
+                  )
+
+              }
+
+            </div>
+
+          )
+
+        }
+
+
+
+
+
+
       </div>
 
       </div>
