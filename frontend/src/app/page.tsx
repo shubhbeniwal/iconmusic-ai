@@ -16,6 +16,14 @@ import { continueSession }
 
 from "@/lib/api"
 
+import {
+
+  getArtwork
+
+}
+
+from "@/lib/artwork"
+
 import Logo from "@/components/Logo"
 
 import HeroSection from "@/components/HeroSection"
@@ -251,25 +259,29 @@ export default function Home() {
 
             <RecommendationCard
 
-              title={
-                recommendation.song.title
-              }
+              title="Fix You"
 
-              artist={
-                recommendation.song.artist
-              }
+              artist="Coldplay"
 
-              image="/images/placeholder.jpg"
+              match={92}
 
-              match={
-                Math.round(
-                  recommendation.score * 100
-                )
-              }
+              moods={[
 
-              reasons={
-                recommendation.why
-              }
+                "healing",
+
+                "hopeful"
+
+              ]}
+
+              reasons={[
+
+                "Healing",
+
+                "Hopeful",
+
+                "You like Coldplay"
+
+              ]}
 
             />
 
@@ -352,7 +364,11 @@ export default function Home() {
                           item.song.artist
                         }
 
-                        image="/images/placeholder.jpg"
+                        image={
+                          getArtwork(
+                            item.song.title
+                          )
+                        }
 
                       />
 

@@ -1,10 +1,40 @@
+import {
+
+  getMoodGradient
+
+}
+
+from "@/lib/moodGradients"
+
+import {
+
+  getArtistAvatar
+
+}
+
+from "@/lib/artistAvatar"
+
+import {
+
+  getMoodIcon
+
+}
+
+from "@/lib/moodIcons"
+
 type Props = {
 
   title: string
+
   artist: string
+
   reasons: string[]
-  image: string
+
+  image?: string
+
   match: number
+
+  moods: string[]
 
 }
 
@@ -18,7 +48,9 @@ export default function RecommendationCard({
 
   image,
 
-  match
+  match,
+
+  moods
 
 }: Props) {
 
@@ -37,15 +69,49 @@ export default function RecommendationCard({
 
       <div className="relative">
 
-        <img
-            src={image}
-            alt={title}
-            className="
-            h-56
-            w-full
-            object-cover
-            "
-        />
+        {
+
+          image ? (
+
+            <img
+
+              src={image}
+
+              alt={title}
+
+              className="
+              h-52
+              w-full
+              object-cover
+              "
+
+            />
+
+          ) : (
+
+            <div
+
+              className={`
+              h-52
+              w-full
+              bg-gradient-to-br
+              ${getMoodGradient(moods)}
+              flex
+              items-center
+              justify-center
+              text-5xl
+              font-bold
+              `}
+
+            >
+
+              ♠
+
+            </div>
+
+          )
+
+        }
 
         <div
             className="
@@ -78,20 +144,63 @@ export default function RecommendationCard({
             </div>
 
             <div
-            className="
-            text-3xl
-            font-bold
-            "
+              className="
+              flex
+              items-center
+              gap-3
+              "
             >
-            {title}
-            </div>
 
-            <div
-            className="
-            text-zinc-300
-            "
-            >
-            {artist}
+              <div
+                className="
+                h-12
+                w-12
+                rounded-full
+                bg-zinc-800
+                border
+                border-zinc-700
+                flex
+                items-center
+                justify-center
+                text-xl
+                "
+              >
+
+                {
+
+                  getArtistAvatar(
+
+                    artist
+
+                  )
+
+                }
+
+              </div>
+
+              <div>
+
+                <h3
+                  className="
+                  text-2xl
+                  font-bold
+                  tracking-tight
+                  "
+                >
+                  {title}
+                </h3>
+
+                <p
+                  className="
+                  text-zinc-500
+                  text-sm
+                  "
+                >
+                  {artist}
+                </p>
+
+              </div>
+
             </div>
 
         </div>
@@ -118,32 +227,74 @@ export default function RecommendationCard({
 
           <div className="flex flex-wrap gap-2 mt-3">
 
-            {reasons.map(
+            <div
 
-                (reason, index) => (
+              className="
+              flex
+              flex-wrap
+              gap-2
+              mt-3
+              "
 
-                <div
+            >
 
-                    key={index}
+              {
 
-                    className="
-                    px-3
-                    py-1
-                    rounded-full
-                    bg-zinc-800
-                    text-xs
-                    text-zinc-300
-                    "
+                reasons.map(
 
-                >
+                  (
 
-                    {reason}
+                    reason,
 
-                </div>
+                    index
+
+                  ) => (
+
+                    <div
+
+                      key={index}
+
+                      className="
+                      px-3
+                      py-1
+                      rounded-full
+                      bg-zinc-800
+                      border
+                      border-zinc-700
+                      text-xs
+                      text-zinc-300
+                      flex
+                      items-center
+                      gap-2
+                      "
+
+                    >
+
+                      <span>
+
+                        {
+
+                          getMoodIcon(
+
+                            reason
+
+                          )
+
+                        }
+
+                      </span>
+
+                      {reason}
+
+                    </div>
+
+                  )
 
                 )
 
-            )}
+              }
+
+            </div>
 
          </div>
 
