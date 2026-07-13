@@ -16,13 +16,11 @@ import { continueSession }
 
 from "@/lib/api"
 
-import {
-
-  getArtwork
-
-}
+import { getArtwork }
 
 from "@/lib/artwork"
+
+
 
 import Logo from "@/components/Logo"
 
@@ -126,10 +124,6 @@ export default function Home() {
     }
 
   }
-
-  const recommendation =
-
-  result?.recommendations?.[0]
 
   return (
 
@@ -254,43 +248,44 @@ export default function Home() {
         />
 
         {
-
-          recommendation && (
+          result && result.recommendations?.[0] && (
 
             <RecommendationCard
 
-              title="Fix You"
+              title={
+                result.recommendations[0].song.title
+              }
 
-              artist="Coldplay"
+              artist={
+                result.recommendations[0].song.artist
+              }
 
-              match={92}
+              image={
+                getArtwork(
+                  result.recommendations[0].song.title
+                )
+              }
 
-              moods={[
+              match={
+                Math.round(
+                  result.recommendations[0].score * 100
+                )
+              }
 
-                "healing",
+              reasons={
+                result.recommendations[0].why
+              }
 
-                "hopeful"
-
-              ]}
-
-              reasons={[
-
-                "Healing",
-
-                "Hopeful",
-
-                "You like Coldplay"
-
-              ]}
+              moods={
+                result.recommendations[0].song.moods
+              }
 
             />
 
           )
-
         }
 
         {
-
           result && (
 
             <AIInsightPanel
@@ -302,7 +297,6 @@ export default function Home() {
             />
 
           )
-
         }
 
         {
