@@ -36,6 +36,10 @@ type Props = {
 
   moods: string[]
 
+  genre: string
+
+  energy: string
+
 }
 
 export default function RecommendationCard({
@@ -50,7 +54,11 @@ export default function RecommendationCard({
 
   match,
 
-  moods
+  moods,
+
+  genre,
+
+  energy
 
 }: Props) {
 
@@ -223,6 +231,45 @@ export default function RecommendationCard({
         >
         {match}% Match
         </div>
+            
+
+          <div
+            className="
+            flex
+            gap-2
+            mt-3
+            flex-wrap
+            "
+          >
+
+            <div
+              className="
+              px-3
+              py-1
+              rounded-full
+              bg-zinc-800
+              text-xs
+              text-zinc-300
+              "
+            >
+              {genre}
+            </div>
+
+            <div
+              className="
+              px-3
+              py-1
+              rounded-full
+              bg-zinc-800
+              text-xs
+              text-zinc-300
+              "
+            >
+              {energy} Energy
+            </div>
+
+          </div>  
+
 
 
           <div className="flex flex-wrap gap-2 mt-3">

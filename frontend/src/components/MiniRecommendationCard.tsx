@@ -3,6 +3,7 @@ type Props = {
   title: string
   artist: string
   image: string
+  match: number
 
 }
 
@@ -10,7 +11,8 @@ export default function MiniRecommendationCard({
 
   title,
   artist,
-  image
+  image,
+  match
 
 }: Props) {
 
@@ -61,6 +63,16 @@ export default function MiniRecommendationCard({
           {artist}
         </p>
 
+      </div>
+
+      <div
+        className="
+        mt-2
+        text-green-400
+        text-xs
+        "
+      >
+        {match}% Match
       </div>
 
     </div>

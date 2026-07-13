@@ -1,43 +1,23 @@
 "use client"
 
-import { useState, useEffect }
+import { useState, useEffect } from "react"
 
-from "react"
+import { getMusicRecommendations } from "@/lib/api"
+import { continueSession } from "@/lib/api"
 
-import { getMusicRecommendations }
-
-from "@/lib/api"
-
-import ContinueSessionCard
-
-from "@/components/ContinueSessionCard"
-
-import { continueSession }
-
-from "@/lib/api"
-
-import { getArtwork }
-
-from "@/lib/artwork"
-
-
+import { getArtwork } from "@/lib/artwork"
 
 import Logo from "@/components/Logo"
-
 import HeroSection from "@/components/HeroSection"
-
 import MoodInputCard from "@/components/MoodInputCard"
-
 import RecommendationCard from "@/components/RecommendationCard"
-
 import AIInsightPanel from "@/components/AIInsightPanel"
-
 import BottomNav from "@/components/BottomNav"
-
 import SectionTitle from "@/components/SectionTitle"
-
 import MiniRecommendationCard from "@/components/MiniRecommendationCard"
-
+import ContinueSessionCard from "@/components/ContinueSessionCard"
+import MoodBanner from "@/components/MoodBanner"
+import EmptyState from "@/components/EmptyState"
 
 export default function Home() {
 
@@ -51,7 +31,7 @@ export default function Home() {
 
   useEffect(() => {
 
-  const loadSession = async () => {
+    const loadSession = async () => {
 
       try {
 
@@ -102,9 +82,7 @@ export default function Home() {
     try {
 
       const data = await getMusicRecommendations(
-
         moodText
-
       )
 
       setResult(data)
@@ -125,6 +103,9 @@ export default function Home() {
 
   }
 
+  const topRecommendation =
+    result?.recommendations?.[0]
+
   return (
 
     <main
@@ -138,6 +119,8 @@ export default function Home() {
       bg-black
       "
     >
+
+      {/* Background Orbs */}
 
       <div
         className="
@@ -198,12 +181,17 @@ export default function Home() {
 
       <div className="max-w-md mx-auto px-6 pt-10">
 
+        {/* Header */}
+
         <div className="mb-10">
+
           <Logo />
+
           <HeroSection />
+
         </div>
 
-
+        {/* Continue Session */}
 
         {
 
@@ -225,6 +213,7 @@ export default function Home() {
 
         }
 
+        {/* Mood Input */}
 
         <MoodInputCard
 
@@ -238,76 +227,17 @@ export default function Home() {
 
         />
 
-      <div className="mt-6">
-        <SectionTitle
-
-          title="Today's Match"
-
-          subtitle="Picked by Icon AI"
-
-        />
-
-        {
-          result && result.recommendations?.[0] && (
-
-            <RecommendationCard
-
-              title={
-                result.recommendations[0].song.title
-              }
-
-              artist={
-                result.recommendations[0].song.artist
-              }
-
-              image={
-                getArtwork(
-                  result.recommendations[0].song.title
-                )
-              }
-
-              match={
-                Math.round(
-                  result.recommendations[0].score * 100
-                )
-              }
-
-              reasons={
-                result.recommendations[0].why
-              }
-
-              moods={
-                result.recommendations[0].song.moods
-              }
-
-            />
-
-          )
-        }
-
-        {
-          result && (
-
-            <AIInsightPanel
-
-              message={
-                result.coach_message
-              }
-
-            />
-
-          )
-        }
+        {/* Mood Banner */}
 
         {
 
           result && (
 
-            <SectionTitle
+            <MoodBanner
 
-              title="More Matches"
-
-              subtitle="Based on your music taste"
+              mood={
+                result.detected_mood
+              }
 
             />
 
@@ -315,80 +245,156 @@ export default function Home() {
 
         }
 
+        <div className="mt-6">
 
+          {
 
-        {
+            !result ? (
 
-          result && (
+              <EmptyState />
 
-            <div
-              className="
-              flex
-              gap-4
-              overflow-x-auto
-              pb-4
-              "
-            >
+            ) : (
 
-              {
+              <>
 
-                result.recommendations
+                {/* Today's Match */}
 
-                  .slice(1)
+                <SectionTitle
 
-                  .map(
+                  title="Today's Match"
 
-                    (
+                  subtitle="Picked by Icon AI"
 
-                      item: any,
+                />
 
-                      index: number
+                <RecommendationCard
 
-                    ) => (
+                  title={
+                    topRecommendation.song.title
+                  }
 
-                      <MiniRecommendationCard
+                  artist={
+                    topRecommendation.song.artist
+                  }
 
-                        key={index}
-
-                        title={
-                          item.song.title
-                        }
-
-                        artist={
-                          item.song.artist
-                        }
-
-                        image={
-                          getArtwork(
-                            item.song.title
-                          )
-                        }
-
-                      />
-
+                  image={
+                    getArtwork(
+                      topRecommendation.song.title
                     )
+                  }
 
-                  )
+                  match={
+                    Math.round(
+                      topRecommendation.score * 100
+                    )
+                  }
 
-              }
+                  reasons={
+                    topRecommendation.why
+                  }
 
-            </div>
+                  moods={
+                    topRecommendation.song.moods
+                  }
 
-          )
+                  genre={
+                    topRecommendation.song.genre
+                  }
 
-        }
+                  energy={
+                    topRecommendation.song.energy
+                  }
 
+                />
 
+                {/* AI Insight */}
 
+                <AIInsightPanel
 
+                  message={
+                    result.coach_message
+                  }
 
+                />
+
+                {/* More Matches */}
+
+                <SectionTitle
+
+                  title="More Matches"
+
+                  subtitle="Based on your music taste"
+
+                />
+
+                <div
+                  className="
+                  flex
+                  gap-4
+                  overflow-x-auto
+                  pb-4
+                  "
+                >
+
+                  {
+
+                    result.recommendations
+
+                      .slice(1)
+
+                      .map(
+
+                        (
+                          item: any,
+                          index: number
+                        ) => (
+
+                          <MiniRecommendationCard
+
+                            key={index}
+
+                            title={
+                              item.song.title
+                            }
+
+                            artist={
+                              item.song.artist
+                            }
+
+                            image={
+                              getArtwork(
+                                item.song.title
+                              )
+                            }
+
+                            match={
+                              Math.round(
+                                item.score * 100
+                              )
+                            }
+
+                          />
+
+                        )
+
+                      )
+
+                  }
+
+                </div>
+
+              </>
+
+            )
+
+          }
+
+        </div>
 
       </div>
 
-      </div>
+      <BottomNav />
 
-    <BottomNav />
-      
     </main>
 
   )
