@@ -18,6 +18,8 @@ import MiniRecommendationCard from "@/components/MiniRecommendationCard"
 import ContinueSessionCard from "@/components/ContinueSessionCard"
 import MoodBanner from "@/components/MoodBanner"
 import EmptyState from "@/components/EmptyState"
+import SkeletonRecommendation from "@/components/SkeletonRecommendation"
+import SkeletonMiniCard from "@/components/SkeletonMiniCard"
 
 export default function Home() {
 
@@ -249,7 +251,36 @@ export default function Home() {
 
           {
 
-            !result ? (
+            loading ? (
+
+              <>
+
+                <SkeletonRecommendation />
+
+                <div className="mt-6">
+
+                  <SkeletonRecommendation />
+
+                </div>
+
+                <div
+                  className="
+                  flex
+                  gap-4
+                  mt-6
+                  overflow-x-auto
+                  "
+                >
+
+                  <SkeletonMiniCard />
+                  <SkeletonMiniCard />
+                  <SkeletonMiniCard />
+
+                </div>
+
+              </>
+
+            ) : !result ? (
 
               <EmptyState />
 
