@@ -1,8 +1,18 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect }
+
+from "react"
 
 import { getMusicRecommendations }
+
+from "@/lib/api"
+
+import ContinueSessionCard
+
+from "@/components/ContinueSessionCard"
+
+import { continueSession }
 
 from "@/lib/api"
 
@@ -25,11 +35,57 @@ import MiniRecommendationCard from "@/components/MiniRecommendationCard"
 
 export default function Home() {
 
+  const [memoryData, setMemoryData] = useState<any>(null)
+
   const [moodText, setMoodText] = useState("")
 
   const [loading, setLoading] = useState(false)
 
   const [result, setResult] = useState<any>(null)
+
+  useEffect(() => {
+
+  const loadSession = async () => {
+
+      try {
+
+        const data = await continueSession()
+
+        setMemoryData(data)
+
+      }
+
+      catch {
+
+        console.log(
+          "No previous session"
+        )
+
+      }
+
+    }
+
+    loadSession()
+
+  }, [])
+
+  const handleContinue = async () => {
+
+    try {
+
+      const data = await continueSession()
+
+      setResult(data)
+
+    }
+
+    catch (error) {
+
+      console.error(error)
+
+    }
+
+  }
 
   const handleDiscover = async () => {
 
@@ -144,6 +200,29 @@ export default function Home() {
           <Logo />
           <HeroSection />
         </div>
+
+
+
+        {
+
+          memoryData && (
+
+            <ContinueSessionCard
+
+              lastQuery={
+                memoryData.based_on
+              }
+
+              onContinue={
+                handleContinue
+              }
+
+            />
+
+          )
+
+        }
+
 
         <MoodInputCard
 

@@ -23,3 +23,25 @@ export async function getMusicRecommendations(
   return response.json()
 
 }
+
+
+
+export async function continueSession() {
+
+  const response = await fetch(
+
+    "http://127.0.0.1:8000/continue-session"
+
+  )
+
+  if (!response.ok) {
+
+    throw new Error(
+      "No session found"
+    )
+
+  }
+
+  return response.json()
+
+}
