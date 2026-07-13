@@ -1,4 +1,15 @@
-export default function AIInsightPanel() {
+type Props = {
+
+    message: string
+
+    }
+
+export default function AIInsightPanel({
+
+  message
+
+}: Props) {
+
   return (
 
     <div
@@ -50,14 +61,7 @@ export default function AIInsightPanel() {
                 mt-2
                 "
             >
-                You're feeling emotionally exhausted.
-                Based on your listening history,
-                Coldplay often helps during reflective
-                moments.
-
-                Fix You combines healing,
-                hopefulness and familiarity,
-                making it a strong match right now.
+                {message}
             </p>
 
             </div>

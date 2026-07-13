@@ -1,16 +1,40 @@
-export default function MoodInputCard() {
+type Props = {
+
+  moodText: string
+
+  setMoodText: (
+    value: string
+  ) => void
+
+  onDiscover: () => void
+
+  loading: boolean
+
+}
+
+export default function MoodInputCard({
+
+  moodText,
+
+  setMoodText,
+
+  onDiscover,
+
+  loading
+
+}: Props) {
 
   return (
 
     <div
-    className="
-    bg-zinc-900/90
-    rounded-3xl
-    p-6
-    border
-    border-zinc-800
-    shadow-[0_0_40px_rgba(255,255,255,0.03)]
-    "
+      className="
+      bg-zinc-900/90
+      rounded-3xl
+      p-6
+      border
+      border-zinc-800
+      shadow-[0_0_40px_rgba(255,255,255,0.03)]
+      "
     >
 
       <h2 className="text-xl font-semibold">
@@ -18,6 +42,12 @@ export default function MoodInputCard() {
       </h2>
 
       <textarea
+        value={moodText}
+        onChange={(e) =>
+          setMoodText(
+            e.target.value
+          )
+        }
         className="
         mt-4
         w-full
@@ -32,6 +62,8 @@ export default function MoodInputCard() {
       />
 
       <button
+        onClick={onDiscover}
+        disabled={loading}
         className="
         mt-4
         w-full
@@ -47,7 +79,15 @@ export default function MoodInputCard() {
         hover:scale-[1.02]
         "
       >
-        Discover Music
+        {
+
+          loading
+
+            ? "Discovering..."
+
+            : "Discover Music"
+
+        }
       </button>
 
     </div>

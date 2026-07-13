@@ -1,3 +1,11 @@
+"use client"
+
+import { useState } from "react"
+
+import { getMusicRecommendations }
+
+from "@/lib/api"
+
 import Logo from "@/components/Logo"
 
 import HeroSection from "@/components/HeroSection"
@@ -16,6 +24,48 @@ import MiniRecommendationCard from "@/components/MiniRecommendationCard"
 
 
 export default function Home() {
+
+  const [moodText, setMoodText] = useState("")
+
+  const [loading, setLoading] = useState(false)
+
+  const [result, setResult] = useState<any>(null)
+
+  const handleDiscover = async () => {
+
+    if (!moodText.trim()) return
+
+    setLoading(true)
+
+    try {
+
+      const data = await getMusicRecommendations(
+
+        moodText
+
+      )
+
+      setResult(data)
+
+    }
+
+    catch (error) {
+
+      console.error(error)
+
+    }
+
+    finally {
+
+      setLoading(false)
+
+    }
+
+  }
+
+  const recommendation =
+
+  result?.recommendations?.[0]
 
   return (
 
@@ -95,7 +145,17 @@ export default function Home() {
           <HeroSection />
         </div>
 
-        <MoodInputCard />
+        <MoodInputCard
+
+          moodText={moodText}
+
+          setMoodText={setMoodText}
+
+          loading={loading}
+
+          onDiscover={handleDiscover}
+
+        />
 
       <div className="mt-6">
         <SectionTitle
@@ -106,29 +166,53 @@ export default function Home() {
 
         />
 
-        <RecommendationCard
+        {
 
-          title="Fix You"
+          recommendation && (
 
-          artist="Coldplay"
+            <RecommendationCard
 
-          image="/images/fix-you.jpg"
+              title={
+                recommendation.song.title
+              }
 
-          match={92}
+              artist={
+                recommendation.song.artist
+              }
 
-          reasons={[
+              image="/images/placeholder.jpg"
 
-            "Healing",
+              match={
+                Math.round(
+                  recommendation.score * 100
+                )
+              }
 
-            "Hopeful",
+              reasons={
+                recommendation.why
+              }
 
-            "You like Coldplay"
+            />
 
-          ]}
+          )
 
-        />
+        }
 
-        <AIInsightPanel />
+        {
+
+          result && (
+
+            <AIInsightPanel
+
+              message={
+                result.coach_message
+              }
+
+            />
+
+          )
+
+        }
 
         <SectionTitle
 
