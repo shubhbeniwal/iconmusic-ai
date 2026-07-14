@@ -9,6 +9,8 @@ import { getArtwork } from "@/lib/artwork"
 
 import { getMoodTheme } from "@/lib/moodTheme"
 
+import { motion } from "framer-motion"
+
 import Logo from "@/components/Logo"
 import HeroSection from "@/components/HeroSection"
 import MoodInputCard from "@/components/MoodInputCard"
@@ -291,123 +293,213 @@ export default function Home() {
                   subtitle="Picked by Icon AI"
 
                 />
+                
 
-                <RecommendationCard
+                {
+                  result && result.recommendations?.[0] && (
 
-                  title={
-                    topRecommendation.song.title
-                  }
+                    <motion.div
 
-                  artist={
-                    topRecommendation.song.artist
-                  }
+                      initial={{
+                        opacity: 0,
+                        y: 20
+                      }}
 
-                  image={
-                    getArtwork(
-                      topRecommendation.song.title
-                    )
-                  }
+                      animate={{
+                        opacity: 1,
+                        y: 0
+                      }}
 
-                  match={
-                    Math.round(
-                      topRecommendation.score * 100
-                    )
-                  }
+                      transition={{
+                        duration: 0.4
+                      }}
 
-                  reasons={
-                    topRecommendation.why
-                  }
+                    >
 
-                  moods={
-                    topRecommendation.song.moods
-                  }
 
-                  genre={
-                    topRecommendation.song.genre
-                  }
+                        <RecommendationCard
 
-                  energy={
-                    topRecommendation.song.energy
-                  }
+                          title={
+                            topRecommendation.song.title
+                          }
 
-                />
+                          artist={
+                            topRecommendation.song.artist
+                          }
+
+                          image={
+                            getArtwork(
+                              topRecommendation.song.title
+                            )
+                          }
+
+                          match={
+                            Math.round(
+                              topRecommendation.score * 100
+                            )
+                          }
+
+                          reasons={
+                            topRecommendation.why
+                          }
+
+                          moods={
+                            topRecommendation.song.moods
+                          }
+
+                          genre={
+                            topRecommendation.song.genre
+                          }
+
+                          energy={
+                            topRecommendation.song.energy
+                          }
+
+                        />
+
+                      </motion.div>
+
+                  )
+                }  
+
+
+
+
 
                 {/* AI Insight */}
 
-                <AIInsightPanel
+                {
+                result && (
 
-                  message={
-                    result.coach_message
-                  }
+                  <motion.div
 
-                />
+                    initial={{
+                      opacity: 0,
+                      y: 20
+                    }}
+
+                    animate={{
+                      opacity: 1,
+                      y: 0
+                    }}
+
+                    transition={{
+                      delay: 0.15,
+                      duration: 0.4
+                    }}
+
+                  >
+
+                  <AIInsightPanel
+
+                    message={
+                      result.coach_message
+                    }
+
+                  />
+
+
+                  </motion.div>
+
+                  )
+                }
+
+
+
+
+
+
 
                 {/* More Matches */}
 
-                <SectionTitle
+                {
+                  result && (
 
-                  title="More Matches"
+                    <motion.div
 
-                  subtitle="Based on your music taste"
+                      initial={{
+                        opacity: 0,
+                        y: 20
+                      }}
 
-                />
+                      animate={{
+                        opacity: 1,
+                        y: 0
+                      }}
 
-                <div
-                  className="
-                  flex
-                  gap-4
-                  overflow-x-auto
-                  pb-4
-                  "
-                >
+                      transition={{
+                        delay: 0.3,
+                        duration: 0.4
+                      }}
 
-                  {
+                    >
 
-                    result.recommendations
+                      <SectionTitle
 
-                      .slice(1)
+                        title="More Matches"
 
-                      .map(
+                        subtitle="Based on your music taste"
 
-                        (
-                          item: any,
-                          index: number
-                        ) => (
+                      />
 
-                          <MiniRecommendationCard
+                      <div
+                        className="
+                        flex
+                        gap-4
+                        overflow-x-auto
+                        pb-4
+                        "
+                      >
 
-                            key={index}
+                        {
 
-                            title={
-                              item.song.title
-                            }
+                          result.recommendations
 
-                            artist={
-                              item.song.artist
-                            }
+                            .slice(1)
 
-                            image={
-                              getArtwork(
-                                item.song.title
+                            .map(
+
+                              (
+                                item: any,
+                                index: number
+                              ) => (
+
+                                <MiniRecommendationCard
+
+                                  key={index}
+
+                                  title={
+                                    item.song.title
+                                  }
+
+                                  artist={
+                                    item.song.artist
+                                  }
+
+                                  image={
+                                    getArtwork(
+                                      item.song.title
+                                    )
+                                  }
+
+                                  match={
+                                    Math.round(
+                                      item.score * 100
+                                    )
+                                  }
+
+                                />
+
                               )
-                            }
 
-                            match={
-                              Math.round(
-                                item.score * 100
-                              )
-                            }
+                            )
 
-                          />
+                        }
 
-                        )
-
+                        </div>
+                      </motion.div>
                       )
-
-                  }
-
-                </div>
-
+                    }
               </>
 
             )
