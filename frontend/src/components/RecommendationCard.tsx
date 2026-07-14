@@ -69,14 +69,19 @@ export default function RecommendationCard({
     <motion.div
       initial={{
         opacity: 0,
-        y: 30
+        y: 30,
+        scale: 0.96
       }}
+
       animate={{
         opacity: 1,
-        y: 0
+        y: 0,
+        scale: 1
       }}
+
       transition={{
-        duration: 0.5
+        duration: 0.5,
+        ease: "easeOut"
       }}
       className="
       bg-zinc-900
