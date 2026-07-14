@@ -7,6 +7,8 @@ import { continueSession } from "@/lib/api"
 
 import { getArtwork } from "@/lib/artwork"
 
+import { getMoodTheme } from "@/lib/moodTheme"
+
 import Logo from "@/components/Logo"
 import HeroSection from "@/components/HeroSection"
 import MoodInputCard from "@/components/MoodInputCard"
@@ -108,6 +110,10 @@ export default function Home() {
   const topRecommendation =
     result?.recommendations?.[0]
 
+  const theme = getMoodTheme(
+    result?.detected_mood
+  )
+
   return (
 
     <main
@@ -125,7 +131,22 @@ export default function Home() {
       {/* Background Orbs */}
 
       <div
-        className="
+        className={`
+          absolute
+          top-0
+          left-1/2
+          -translate-x-1/2
+          h-[500px]
+          w-[500px]
+          rounded-full
+          ${theme.primary}
+          blur-[140px]
+          pointer-events-none
+        `}
+      />
+
+      <div
+        className={`
         absolute
         top-0
         left-1/2
@@ -133,52 +154,25 @@ export default function Home() {
         h-[500px]
         w-[500px]
         rounded-full
-        bg-emerald-500/20
+        ${theme.secondary}
         blur-[140px]
         pointer-events-none
-        "
+        `}
       />
 
       <div
-        className="
+        className={`
         absolute
-        top-40
-        right-[-100px]
-        h-72
-        w-72
+        top-0
+        left-1/2
+        -translate-x-1/2
+        h-[500px]
+        w-[500px]
         rounded-full
-        bg-purple-500/10
-        blur-[120px]
-        pointer-events-none
-        "
-      />
-
-      <div
-        className="
-        absolute
-        bottom-40
-        left-[-100px]
-        h-80
-        w-80
-        rounded-full
-        bg-cyan-500/10
+        ${theme.tertiary}
         blur-[140px]
         pointer-events-none
-        "
-      />
-
-      <div
-        className="
-        absolute
-        top-[700px]
-        right-[-60px]
-        h-60
-        w-60
-        rounded-full
-        bg-green-500/10
-        blur-[120px]
-        pointer-events-none
-        "
+        `}
       />
 
       <div className="max-w-md mx-auto px-6 pt-10">
