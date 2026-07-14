@@ -22,10 +22,14 @@ export default function MiniRecommendationCard({
 
     <motion.div
       whileHover={{
-        scale: 1.05
+        y: -4,
+        scale: 1.03
       }}
       whileTap={{
-        scale: 0.97
+        scale: 0.98
+      }}
+      transition={{
+        duration: 0.2
       }}
       className="
       min-w-[180px]
