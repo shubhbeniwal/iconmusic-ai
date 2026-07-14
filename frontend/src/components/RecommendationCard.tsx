@@ -83,6 +83,11 @@ export default function RecommendationCard({
         duration: 0.5,
         ease: "easeOut"
       }}
+
+      whileHover={{
+        scale: 1.01
+      }}
+
       className="
       bg-zinc-900
       shadow-2xl
@@ -90,6 +95,7 @@ export default function RecommendationCard({
       overflow-hidden
       border
       border-zinc-800
+      hover:border-emerald-500/40
       "
     >
 

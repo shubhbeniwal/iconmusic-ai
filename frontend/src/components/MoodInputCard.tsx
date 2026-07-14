@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+
 type Props = {
 
   moodText: string
@@ -61,7 +63,19 @@ export default function MoodInputCard({
         placeholder="Need motivation for gym..."
       />
 
-      <button
+      <motion.button
+
+        whileHover={{
+          scale: 1.01
+        }}
+
+        whileTap={{
+          scale: 0.97
+        }}
+
+        transition={{
+          duration: 0.15
+        }}
         onClick={onDiscover}
         disabled={loading}
         className="
@@ -88,7 +102,7 @@ export default function MoodInputCard({
             : "Discover Music"
 
         }
-      </button>
+      </motion.button>
 
     </div>
 

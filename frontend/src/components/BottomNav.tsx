@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+
 export default function BottomNav() {
   return (
     <div className="fixed bottom-0 left-0 right-0">
@@ -6,17 +8,41 @@ export default function BottomNav() {
 
         <div className="grid grid-cols-3 text-center py-4">
 
-          <button>
+          <motion.button
+
+            whileTap={{
+              scale: 0.9
+            }}
+
+          >
+
             Home
-          </button>
 
-          <button>
+          </motion.button>
+
+          <motion.button
+
+            whileTap={{
+              scale: 0.9
+            }}
+
+          >
+
             Discover
-          </button>
 
-          <button>
+          </motion.button>
+
+          <motion.button
+
+            whileTap={{
+              scale: 0.9
+            }}
+
+          >
+
             Me
-          </button>
+
+          </motion.button>
 
         </div>
 
