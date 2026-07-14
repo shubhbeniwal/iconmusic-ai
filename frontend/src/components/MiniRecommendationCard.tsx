@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+
 type Props = {
 
   title: string
@@ -18,7 +20,13 @@ export default function MiniRecommendationCard({
 
   return (
 
-    <div
+    <motion.div
+      whileHover={{
+        scale: 1.05
+      }}
+      whileTap={{
+        scale: 0.97
+      }}
       className="
       min-w-[180px]
       bg-zinc-900/90
@@ -75,7 +83,7 @@ export default function MiniRecommendationCard({
         {match}% Match
       </div>
 
-    </div>
+    </motion.div>
 
   )
 

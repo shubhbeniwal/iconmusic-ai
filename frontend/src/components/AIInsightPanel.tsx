@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+
 type Props = {
 
     message: string
@@ -12,7 +14,19 @@ export default function AIInsightPanel({
 
   return (
 
-    <div
+    <motion.div
+        initial={{
+            opacity: 0,
+            y: 20
+        }}
+        animate={{
+            opacity: 1,
+            y: 0
+        }}
+        transition={{
+            delay: 0.15,
+            duration: 0.5
+        }}
         className="
         mt-4
         bg-zinc-900/90
@@ -68,7 +82,7 @@ export default function AIInsightPanel({
 
         </div>
 
-    </div>
+    </motion.div>
 
   )
 }

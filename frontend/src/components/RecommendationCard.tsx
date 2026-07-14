@@ -22,6 +22,8 @@ import {
 
 from "@/lib/moodIcons"
 
+import { motion } from "framer-motion"
+
 type Props = {
 
   title: string
@@ -64,9 +66,20 @@ export default function RecommendationCard({
 
   return (
 
-    <div
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 30
+      }}
+      animate={{
+        opacity: 1,
+        y: 0
+      }}
+      transition={{
+        duration: 0.5
+      }}
       className="
-      bg-zinc-900/90
+      bg-zinc-900
       shadow-2xl
       rounded-3xl
       overflow-hidden
@@ -347,7 +360,7 @@ export default function RecommendationCard({
 
         </div>
 
-      </div>
+      </motion.div>
 
   )
 
