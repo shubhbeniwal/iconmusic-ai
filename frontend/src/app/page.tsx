@@ -24,6 +24,7 @@ import MoodBanner from "@/components/MoodBanner"
 import EmptyState from "@/components/EmptyState"
 import SkeletonRecommendation from "@/components/SkeletonRecommendation"
 import SkeletonMiniCard from "@/components/SkeletonMiniCard"
+import PlayerModal from "@/components/PlayerModal"
 
 export default function Home() {
 
@@ -34,6 +35,10 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
 
   const [result, setResult] = useState<any>(null)
+
+  const [selectedSong, setSelectedSong] = useState<any>(null)
+
+  const [playerOpen, setPlayerOpen] = useState(false)
 
   useEffect(() => {
 
@@ -315,7 +320,28 @@ export default function Home() {
                       }}
 
                     >
+                      <div
+                          onClick={() => {
 
+                            setSelectedSong({
+
+                              title:
+                              result.recommendations[0].song.title,
+
+                              artist:
+                              result.recommendations[0].song.artist,
+
+                              image:
+                              getArtwork(
+                                result.recommendations[0].song.title
+                              )
+
+                            })
+
+                            setPlayerOpen(true)
+
+                          }}
+                        >
 
                         <RecommendationCard
 
@@ -356,8 +382,8 @@ export default function Home() {
                           }
 
                         />
-
-                      </motion.div>
+                      </div>
+                    </motion.div>
 
                   )
                 }  
@@ -509,7 +535,19 @@ export default function Home() {
         </div>
 
       </div>
+      <PlayerModal
 
+        open={playerOpen}
+
+        song={selectedSong}
+
+        onClose={() =>
+
+          setPlayerOpen(false)
+
+        }
+
+      />
       <BottomNav />
 
     </main>

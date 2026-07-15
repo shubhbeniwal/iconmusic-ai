@@ -1,12 +1,12 @@
 {
-    "last_query": "I am Happy today",
-    "last_detected_mood": "happy",
-    "last_search_query": "upbeat energetic joyful music",
+    "last_query": "Need Motivation for Gym",
+    "last_detected_mood": "motivated",
+    "last_search_query": "gym workout motivational music",
     "last_recommendations": [
+        "Believer",
         "Counting Stars",
-        "Yellow",
-        "Don't Stop Me Now",
+        "Titanium",
         "Viva La Vida",
-        "Fix You"
+        "Whatever It Takes"
     ]
 }
