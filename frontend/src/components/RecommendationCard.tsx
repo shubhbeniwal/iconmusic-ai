@@ -94,8 +94,9 @@ export default function RecommendationCard({
       rounded-3xl
       overflow-hidden
       border
-      border-zinc-800
+      border-white/10
       hover:border-emerald-500/40
+      shadow-[0_20px_80px_rgba(0,0,0,0.5)]
       "
     >
 

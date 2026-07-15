@@ -20,6 +20,7 @@ export default function SectionTitle({
         className="
         text-xl
         font-bold
+        tracking-tight
         "
       >
         {title}
@@ -27,7 +28,7 @@ export default function SectionTitle({
 
       <p
         className="
-        text-zinc-500
+        text-zinc-400
         text-sm
         mt-1
         "

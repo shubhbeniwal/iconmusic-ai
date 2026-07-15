@@ -30,11 +30,12 @@ export default function MoodInputCard({
 
     <div
       className="
-      bg-zinc-900/90
+      bg-white/5
+      backdrop-blur-xl
       rounded-3xl
       p-6
       border
-      border-zinc-800
+      border-white/10
       shadow-[0_0_40px_rgba(255,255,255,0.03)]
       "
     >
@@ -83,14 +84,15 @@ export default function MoodInputCard({
         w-full
         rounded-xl
         bg-gradient-to-r
-        from-white
-        to-zinc-200
+        from-emerald-400
+        to-green-500
         text-black
         py-3
         font-semibold
         transition-all
         duration-300
         hover:scale-[1.02]
+        shadow-[0_0_25px_rgba(34,197,94,0.35)]
         "
       >
         {

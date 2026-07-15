@@ -18,9 +18,10 @@ export default function ContinueSessionCard({
 
     <div
       className="
-      bg-zinc-900/90
+      bg-white/5
+      backdrop-blur-xl
       border
-      border-zinc-800
+      border-white/10
       rounded-3xl
       p-5
       mb-6
