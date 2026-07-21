@@ -16,6 +16,8 @@ import { getArtwork } from "@/lib/artwork"
 
 import SectionTitle from "@/components/SectionTitle"
 
+import ListeningProfile from "@/components/ListeningProfile"
+
 type CollectionKey =
 
   | "healing"
@@ -350,6 +352,10 @@ export default function FavoritesSection({
 
         subtitle="Songs you saved"
 
+      />
+
+      <ListeningProfile
+        favorites={favorites}
       />
 
       <AnimatePresence mode="popLayout">
