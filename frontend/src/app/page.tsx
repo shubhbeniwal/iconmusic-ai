@@ -25,6 +25,8 @@ import EmptyState from "@/components/EmptyState"
 import SkeletonRecommendation from "@/components/SkeletonRecommendation"
 import SkeletonMiniCard from "@/components/SkeletonMiniCard"
 import PlayerModal from "@/components/PlayerModal"
+import FavoriteButton from "@/components/FavoriteButton"
+import FavoritesSection from "@/components/FavoritesSection"
 
 export default function Home() {
 
@@ -39,6 +41,9 @@ export default function Home() {
   const [selectedSong, setSelectedSong] = useState<any>(null)
 
   const [playerOpen, setPlayerOpen] = useState(false)
+
+  const [favoritesRevision, setFavoritesRevision] =
+    useState(0)
 
   useEffect(() => {
 
@@ -230,6 +235,12 @@ export default function Home() {
 
         />
 
+        <FavoritesSection
+
+          refreshKey={favoritesRevision}
+
+        />
+
         {/* Mood Banner */}
 
         {
@@ -321,6 +332,7 @@ export default function Home() {
 
                     >
                       <div
+                          className="relative"
                           onClick={() => {
 
                             setSelectedSong({
@@ -342,6 +354,51 @@ export default function Home() {
 
                           }}
                         >
+
+                        <div
+                          className="
+                          absolute
+                          top-4
+                          right-4
+                          z-10
+                          "
+                        >
+
+                          <FavoriteButton
+
+                            title={
+                              topRecommendation.song.title
+                            }
+
+                            song={{
+
+                              title:
+                              topRecommendation.song.title,
+
+                              artist:
+                              topRecommendation.song.artist,
+
+                              image:
+                              getArtwork(
+                                topRecommendation.song.title
+                              ),
+
+                              song:
+                              topRecommendation.song
+
+                            }}
+
+                            onChange={() =>
+
+                              setFavoritesRevision(
+                                (value) => value + 1
+                              )
+
+                            }
+
+                          />
+
+                        </div>
 
                         <RecommendationCard
 
@@ -490,31 +547,81 @@ export default function Home() {
                                 index: number
                               ) => (
 
-                                <MiniRecommendationCard
-
+                                <div
                                   key={index}
+                                  className="relative"
+                                >
 
-                                  title={
-                                    item.song.title
-                                  }
+                                  <div
+                                    className="
+                                    absolute
+                                    top-2
+                                    right-2
+                                    z-10
+                                    "
+                                  >
 
-                                  artist={
-                                    item.song.artist
-                                  }
+                                    <FavoriteButton
 
-                                  image={
-                                    getArtwork(
+                                      title={
+                                        item.song.title
+                                      }
+
+                                      song={{
+
+                                        title:
+                                        item.song.title,
+
+                                        artist:
+                                        item.song.artist,
+
+                                        image:
+                                        getArtwork(
+                                          item.song.title
+                                        ),
+
+                                        song:
+                                        item.song
+
+                                      }}
+
+                                      onChange={() =>
+
+                                        setFavoritesRevision(
+                                          (value) => value + 1
+                                        )
+
+                                      }
+
+                                    />
+
+                                  </div>
+
+                                  <MiniRecommendationCard
+
+                                    title={
                                       item.song.title
-                                    )
-                                  }
+                                    }
 
-                                  match={
-                                    Math.round(
-                                      item.score * 100
-                                    )
-                                  }
+                                    artist={
+                                      item.song.artist
+                                    }
 
-                                />
+                                    image={
+                                      getArtwork(
+                                        item.song.title
+                                      )
+                                    }
+
+                                    match={
+                                      Math.round(
+                                        item.score * 100
+                                      )
+                                    }
+
+                                  />
+
+                                </div>
 
                               )
 
