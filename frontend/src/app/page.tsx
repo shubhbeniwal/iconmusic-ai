@@ -28,6 +28,7 @@ import PlayerModal from "@/components/PlayerModal"
 import FavoriteButton from "@/components/FavoriteButton"
 import FavoritesSection from "@/components/FavoritesSection"
 import {addActivity, getActivity} from "@/lib/activity"
+import {addMoodHistory} from "@/lib/moodHistory"
 import ActivityFeed from "@/components/ActivityFeed"
 
 export default function Home() {
@@ -106,6 +107,12 @@ export default function Home() {
       )
   
       setResult(data)
+
+      addMoodHistory(
+
+        data.detected_mood
+      
+      )
   
       addActivity({
   

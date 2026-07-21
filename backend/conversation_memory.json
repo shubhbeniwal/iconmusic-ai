@@ -1,12 +1,12 @@
 {
-    "last_query": "I am feeling very energetic",
-    "last_detected_mood": "energetic",
-    "last_search_query": "upbeat energetic motivational music",
+    "last_query": "I am Motivated",
+    "last_detected_mood": "motivated",
+    "last_search_query": "upbeat energetic inspirational music",
     "last_recommendations": [
-        "Titanium",
         "Viva La Vida",
-        "Whatever It Takes",
         "Counting Stars",
-        "Believer"
+        "Titanium",
+        "Dream On",
+        "Whatever It Takes"
     ]
 }
