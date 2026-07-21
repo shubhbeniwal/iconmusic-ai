@@ -27,6 +27,8 @@ import SkeletonMiniCard from "@/components/SkeletonMiniCard"
 import PlayerModal from "@/components/PlayerModal"
 import FavoriteButton from "@/components/FavoriteButton"
 import FavoritesSection from "@/components/FavoritesSection"
+import {addActivity, getActivity} from "@/lib/activity"
+import ActivityFeed from "@/components/ActivityFeed"
 
 export default function Home() {
 
@@ -37,6 +39,8 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
 
   const [result, setResult] = useState<any>(null)
+
+  const [activityRevision, setActivityRevision] = useState(0)
 
   const [selectedSong, setSelectedSong] = useState<any>(null)
 
@@ -92,31 +96,72 @@ export default function Home() {
   const handleDiscover = async () => {
 
     if (!moodText.trim()) return
-
+  
     setLoading(true)
-
+  
     try {
-
+  
       const data = await getMusicRecommendations(
         moodText
       )
-
+  
       setResult(data)
-
+  
+      addActivity({
+  
+        id: crypto.randomUUID(),
+  
+        type: "mood",
+  
+        title:
+          `Mood: ${data.detected_mood}`,
+  
+        timestamp: Date.now()
+  
+      })
+  
+      if (
+  
+        data.recommendations?.[0]
+  
+      ) {
+  
+        addActivity({
+  
+          id: crypto.randomUUID(),
+  
+          type: "song",
+  
+          title:
+            data.recommendations[0]
+              .song.title,
+  
+          timestamp: Date.now()
+  
+        })
+  
+      }
+  
+      setActivityRevision(
+  
+        prev => prev + 1
+  
+      )
+  
     }
-
+  
     catch (error) {
-
+  
       console.error(error)
-
+  
     }
-
+  
     finally {
-
+  
       setLoading(false)
-
+  
     }
-
+  
   }
 
   const topRecommendation =
@@ -238,6 +283,14 @@ export default function Home() {
         <FavoritesSection
 
           refreshKey={favoritesRevision}
+
+        />
+
+        <ActivityFeed
+
+        refreshKey={
+          activityRevision
+        }
 
         />
 
