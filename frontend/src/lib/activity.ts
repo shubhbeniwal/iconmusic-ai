@@ -58,4 +58,22 @@ export function addActivity(
 
   )
 
+  
+
+}
+
+export function clearActivity() {
+
+  if (typeof window === "undefined") {
+
+    return
+
+  }
+
+  localStorage.removeItem(
+
+    "iconmusic_activity"
+
+  )
+
 }

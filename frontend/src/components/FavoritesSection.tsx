@@ -4,13 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 
 import { AnimatePresence, motion } from "framer-motion"
 
-import {
-
-  getFavorites,
-
-  type FavoriteSong
-
-} from "@/lib/favorites"
+import {getFavorites, clearFavorites, type FavoriteSong} from "@/lib/favorites"
 
 import { getArtwork } from "@/lib/artwork"
 
@@ -304,6 +298,26 @@ export default function FavoritesSection({
   const [favorites, setFavorites] =
     useState<FavoriteSong[]>([])
 
+  const handleClearAll = () => {
+
+    const confirmed = window.confirm(
+  
+      "Clear all favorites?"
+  
+    )
+  
+    if (!confirmed) {
+  
+      return
+  
+    }
+  
+    clearFavorites()
+  
+    setFavorites([])
+  
+  }
+
   useEffect(() => {
 
     setFavorites(
@@ -353,6 +367,33 @@ export default function FavoritesSection({
         subtitle="Songs you saved"
 
       />
+
+      <div className="flex justify-end mb-4">
+
+      <button
+
+        onClick={handleClearAll}
+
+        className="
+        text-xs
+        px-3
+        py-2
+        rounded-xl
+        border
+        border-red-500/30
+        text-red-400
+        bg-red-500/10
+        hover:bg-red-500/20
+        transition
+        "
+
+      >
+
+        Clear All
+
+      </button>
+
+      </div>
 
       <ListeningProfile
         favorites={favorites}
