@@ -11,7 +11,13 @@ import ArchetypeCard from "@/components/ArchetypeCard"
 import {
   getArchetype
 } from "@/lib/archetype"
+import ListeningReportCard
+from "@/components/ListeningReportCard"
 
+import {
+  generateListeningReport
+}
+from "@/lib/listeningReport"
 
 export default function InsightsPage() {
 
@@ -21,6 +27,8 @@ export default function InsightsPage() {
 
 
     const archetype = getArchetype()
+
+    const report = generateListeningReport()
 
   return (
 
@@ -55,6 +63,12 @@ export default function InsightsPage() {
         emoji={archetype.emoji}
         description={archetype.description}
       />  
+
+        <ListeningReportCard
+
+        report={report}
+
+        />
 
       <ActivityFeed
 
