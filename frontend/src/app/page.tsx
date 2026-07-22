@@ -27,7 +27,15 @@ import PlayerModal from "@/components/PlayerModal"
 import FavoriteButton from "@/components/FavoriteButton"
 import {addActivity, getActivity} from "@/lib/activity"
 import {addMoodHistory} from "@/lib/moodHistory"
+import {    
+  getMoodHistory
+} from "@/lib/moodHistory"
 
+import {
+  generatePersonalityMessage
+} from "@/lib/personality"
+
+import PersonalityCard from "@/components/PersonalityCard"
 
 export default function Home() {
 
@@ -44,6 +52,11 @@ export default function Home() {
   const [selectedSong, setSelectedSong] = useState<any>(null)
 
   const [playerOpen, setPlayerOpen] = useState(false)
+
+  const [
+    personalityMessage,
+    setPersonalityMessage
+  ] = useState("")
 
   const [favoritesRevision, setFavoritesRevision] =
     useState(0)
@@ -105,6 +118,20 @@ export default function Home() {
       )
   
       setResult(data)
+
+      const history = getMoodHistory()
+
+      setPersonalityMessage(
+
+        generatePersonalityMessage(
+
+          data.detected_mood,
+
+          history.length
+
+        )
+
+      )
 
       addMoodHistory(
 
@@ -299,10 +326,19 @@ export default function Home() {
               }
 
             />
+            
 
           )
 
         }
+
+          <PersonalityCard
+
+          message={
+            personalityMessage
+          }
+
+          />
 
         <div className="mt-6">
 
