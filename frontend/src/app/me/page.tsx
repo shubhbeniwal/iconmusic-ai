@@ -18,6 +18,8 @@ import {
 
 } from "@/lib/moodHistory"
 
+import AppScreen from "@/components/AppScreen"
+
 export default function MePage() {
 
   const handleReset = () => {
@@ -34,17 +36,8 @@ export default function MePage() {
 
   return (
 
-    <main
-      className="
-      min-h-screen
-      bg-black
-      text-white
-      px-6
-      pt-10
-      pb-32
-      "
-    >
-
+    <AppScreen>
+        
       <h1
         className="
         text-3xl
@@ -123,7 +116,7 @@ export default function MePage() {
 
       </div>
 
-    </main>
+    </AppScreen>
 
   )
 

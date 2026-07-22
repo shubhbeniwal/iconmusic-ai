@@ -6,6 +6,7 @@ import ActivityFeed from "@/components/ActivityFeed"
 import MoodJourney from "@/components/MoodJourney"
 import MoodInsights from "@/components/MoodInsights"
 import WeeklyMoodReport from "@/components/WeeklyMoodReport"
+import AppScreen from "@/components/AppScreen"
 
 export default function InsightsPage() {
 
@@ -15,16 +16,7 @@ export default function InsightsPage() {
 
   return (
 
-    <main
-      className="
-      min-h-screen
-      bg-black
-      text-white
-      px-6
-      pt-10
-      pb-32
-      "
-    >
+    <AppScreen>
 
       <h1
         className="
@@ -64,7 +56,7 @@ export default function InsightsPage() {
 
       <WeeklyMoodReport />
 
-    </main>
+    </AppScreen>
 
   )
 

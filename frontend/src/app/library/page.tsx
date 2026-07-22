@@ -2,27 +2,16 @@
 
 import { useState } from "react"
 
-import FavoritesSection
-from "@/components/FavoritesSection"
+import FavoritesSection from "@/components/FavoritesSection"
+import AppScreen from "@/components/AppScreen"
 
 export default function LibraryPage() {
 
-  const [refreshKey] =
-
-    useState(0)
+  const [refreshKey] = useState(0)
 
   return (
 
-    <main
-      className="
-      min-h-screen
-      bg-black
-      text-white
-      px-6
-      pt-10
-      pb-32
-      "
-    >
+    <AppScreen>
 
       <h1
         className="
@@ -31,9 +20,7 @@ export default function LibraryPage() {
         mb-2
         "
       >
-
         Your Library
-
       </h1>
 
       <p
@@ -42,18 +29,14 @@ export default function LibraryPage() {
         mb-8
         "
       >
-
         Saved songs and collections
-
       </p>
 
       <FavoritesSection
-
         refreshKey={refreshKey}
-
       />
 
-    </main>
+    </AppScreen>
 
   )
 
