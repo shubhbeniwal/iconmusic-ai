@@ -7,12 +7,20 @@ import MoodJourney from "@/components/MoodJourney"
 import MoodInsights from "@/components/MoodInsights"
 import WeeklyMoodReport from "@/components/WeeklyMoodReport"
 import AppScreen from "@/components/AppScreen"
+import ArchetypeCard from "@/components/ArchetypeCard"
+import {
+  getArchetype
+} from "@/lib/archetype"
+
 
 export default function InsightsPage() {
 
   const [activityRevision] =
 
     useState(0)
+
+
+    const archetype = getArchetype()
 
   return (
 
@@ -41,6 +49,12 @@ export default function InsightsPage() {
         and mood journey
 
       </p>
+
+      <ArchetypeCard
+        title={archetype.title}
+        emoji={archetype.emoji}
+        description={archetype.description}
+      />  
 
       <ActivityFeed
 
