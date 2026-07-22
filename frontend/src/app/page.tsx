@@ -16,7 +16,6 @@ import HeroSection from "@/components/HeroSection"
 import MoodInputCard from "@/components/MoodInputCard"
 import RecommendationCard from "@/components/RecommendationCard"
 import AIInsightPanel from "@/components/AIInsightPanel"
-import BottomNav from "@/components/BottomNav"
 import SectionTitle from "@/components/SectionTitle"
 import MiniRecommendationCard from "@/components/MiniRecommendationCard"
 import ContinueSessionCard from "@/components/ContinueSessionCard"
@@ -26,13 +25,9 @@ import SkeletonRecommendation from "@/components/SkeletonRecommendation"
 import SkeletonMiniCard from "@/components/SkeletonMiniCard"
 import PlayerModal from "@/components/PlayerModal"
 import FavoriteButton from "@/components/FavoriteButton"
-import FavoritesSection from "@/components/FavoritesSection"
 import {addActivity, getActivity} from "@/lib/activity"
 import {addMoodHistory} from "@/lib/moodHistory"
-import ActivityFeed from "@/components/ActivityFeed"
-import MoodJourney from "@/components/MoodJourney"
-import MoodInsights from "@/components/MoodInsights"
-import WeeklyMoodReport from "@/components/WeeklyMoodReport"
+
 
 export default function Home() {
 
@@ -705,7 +700,6 @@ export default function Home() {
         }
 
       />
-      <BottomNav />
 
     </main>
 
