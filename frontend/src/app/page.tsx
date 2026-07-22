@@ -290,19 +290,6 @@ export default function Home() {
 
         />
 
-        <ActivityFeed
-
-        refreshKey={
-          activityRevision
-        }
-
-        />
-
-        <MoodJourney />
-
-        <MoodInsights />
-
-        <WeeklyMoodReport />
 
         {/* Mood Banner */}
 
