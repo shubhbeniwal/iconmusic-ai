@@ -31,6 +31,8 @@ import {addActivity, getActivity} from "@/lib/activity"
 import {addMoodHistory} from "@/lib/moodHistory"
 import ActivityFeed from "@/components/ActivityFeed"
 import MoodJourney from "@/components/MoodJourney"
+import MoodInsights from "@/components/MoodInsights"
+import WeeklyMoodReport from "@/components/WeeklyMoodReport"
 
 export default function Home() {
 
@@ -303,6 +305,10 @@ export default function Home() {
         />
 
         <MoodJourney />
+
+        <MoodInsights />
+
+        <WeeklyMoodReport />
 
         {/* Mood Banner */}
 

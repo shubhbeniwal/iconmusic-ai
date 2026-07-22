@@ -1,12 +1,12 @@
 {
-    "last_query": "I am Motivated",
-    "last_detected_mood": "motivated",
-    "last_search_query": "upbeat energetic inspirational music",
+    "last_query": "I am Happy",
+    "last_detected_mood": "happy",
+    "last_search_query": "upbeat energetic joyful music",
     "last_recommendations": [
-        "Viva La Vida",
         "Counting Stars",
-        "Titanium",
-        "Dream On",
-        "Whatever It Takes"
+        "Yellow",
+        "Don't Stop Me Now",
+        "Viva La Vida",
+        "Fix You"
     ]
 }
