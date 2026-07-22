@@ -290,12 +290,6 @@ export default function Home() {
 
         />
 
-        <FavoritesSection
-
-          refreshKey={favoritesRevision}
-
-        />
-
         <ActivityFeed
 
         refreshKey={
