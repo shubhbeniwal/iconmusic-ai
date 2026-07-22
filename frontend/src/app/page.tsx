@@ -36,6 +36,9 @@ import {
 } from "@/lib/personality"
 
 import PersonalityCard from "@/components/PersonalityCard"
+import {
+  generateListeningInsight
+} from "@/lib/personalityInsights"
 
 export default function Home() {
 
@@ -60,6 +63,14 @@ export default function Home() {
 
   const [favoritesRevision, setFavoritesRevision] =
     useState(0)
+
+    const [
+
+      listeningInsight,
+    
+      setListeningInsight
+    
+    ] = useState("")
 
   useEffect(() => {
 
@@ -131,6 +142,12 @@ export default function Home() {
 
         )
 
+      )
+
+      setListeningInsight(
+
+        generateListeningInsight()
+      
       )
 
       addMoodHistory(
@@ -338,6 +355,10 @@ export default function Home() {
             personalityMessage
           }
 
+          />
+          
+          <PersonalityCard
+            message={listeningInsight}
           />
 
         <div className="mt-6">
