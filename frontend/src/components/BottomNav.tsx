@@ -1,53 +1,127 @@
+"use client"
+
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 
+const navItems = [
+
+  {
+    label: "Home",
+    href: "/"
+  },
+
+  {
+    label: "Library",
+    href: "/library"
+  },
+
+  {
+    label: "Insights",
+    href: "/insights"
+  },
+
+  {
+    label: "Me",
+    href: "/me"
+  }
+
+]
+
 export default function BottomNav() {
+
+  const pathname = usePathname()
+
   return (
-    <div className="fixed bottom-0 left-0 right-0">
 
-      <div className="max-w-md mx-auto bg-black/60 backdrop-blur-xl border-white/10 border-t border-zinc-800">
+    <div className="fixed bottom-0 left-0 right-0 z-50">
 
-        <div className="grid grid-cols-3 text-center py-4">
+      <div
+        className="
+        max-w-md
+        mx-auto
+        bg-black/60
+        backdrop-blur-xl
+        border-white/10
+        border-t
+        border-zinc-800
+        "
+      >
 
-          <motion.button
+        <div
+          className="
+          grid
+          grid-cols-4
+          text-center
+          py-4
+          "
+        >
 
-            whileTap={{
-              scale: 0.9
-            }}
+          {
 
-          >
+            navItems.map(
 
-            Home
+              (item) => {
 
-          </motion.button>
+                const active =
 
-          <motion.button
+                  pathname === item.href
 
-            whileTap={{
-              scale: 0.9
-            }}
+                return (
 
-          >
+                  <Link
 
-            Discover
+                    key={item.href}
 
-          </motion.button>
+                    href={item.href}
 
-          <motion.button
+                  >
 
-            whileTap={{
-              scale: 0.9
-            }}
+                    <motion.div
 
-          >
+                      whileTap={{
+                        scale: 0.9
+                      }}
 
-            Me
+                      className={`
+                        flex
+                        flex-col
+                        items-center
+                        justify-center
+                        text-sm
+                        transition-all
+                        duration-300
 
-          </motion.button>
+                        ${
+                          active
+
+                          ? "text-emerald-400"
+
+                          : "text-zinc-500"
+                        }
+                      `}
+                    >
+
+                      {item.label}
+
+                    </motion.div>
+
+                  </Link>
+
+                )
+
+              }
+
+            )
+
+          }
 
         </div>
 
       </div>
 
     </div>
+
   )
+
 }
