@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import ActivityFeed from "@/components/ActivityFeed"
 import MoodJourney from "@/components/MoodJourney"
@@ -19,16 +19,42 @@ import {
 }
 from "@/lib/listeningReport"
 
+import ShareReportCard
+from "@/components/ShareReportCard"
+
+import ExportReportButton
+from "@/components/ExportReportButton"
+
+
 export default function InsightsPage() {
 
-  const [activityRevision] =
-
+    const [activityRevision] =
     useState(0)
 
+    const [report, setReport] =
+    useState<any>(null)
 
-    const archetype = getArchetype()
+    const [archetype, setArchetype] =
+    useState<any>(null)
 
-    const report = generateListeningReport()
+    useEffect(() => {
+
+    setReport(
+        generateListeningReport()
+    )
+
+    setArchetype(
+        getArchetype()
+    )
+
+    }, [])
+
+
+    if (!report || !archetype) {
+
+        return null
+        
+    }
 
   return (
 
@@ -69,6 +95,20 @@ export default function InsightsPage() {
         report={report}
 
         />
+
+        <ShareReportCard
+
+        archetype={report.archetype}
+
+        dominantMood={report.dominantMood}
+
+        sessions={report.totalSessions}
+
+        favorites={report.favoriteSongs}
+
+        />
+
+        <ExportReportButton />
 
       <ActivityFeed
 

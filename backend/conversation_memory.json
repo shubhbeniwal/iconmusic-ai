@@ -1,12 +1,12 @@
 {
-    "last_query": "I am Motivated today",
-    "last_detected_mood": "motivated",
-    "last_search_query": "upbeat energetic inspiring music",
+    "last_query": "I need Motivation",
+    "last_detected_mood": "demotivated",
+    "last_search_query": "motivational uplifting energetic music",
     "last_recommendations": [
         "Counting Stars",
         "Viva La Vida",
         "Titanium",
         "Whatever It Takes",
-        "Don't Stop Me Now"
+        "Believer"
     ]
 }
