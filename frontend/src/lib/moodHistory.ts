@@ -90,3 +90,19 @@ export function getMoodHistory() {
   return readHistory()
 
 }
+
+export function clearMoodHistory() {
+
+  if (typeof window === "undefined") {
+
+    return
+
+  }
+
+  localStorage.removeItem(
+
+    "iconmusic_mood_history"
+
+  )
+
+}
