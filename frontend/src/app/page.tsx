@@ -30,6 +30,7 @@ import FavoritesSection from "@/components/FavoritesSection"
 import {addActivity, getActivity} from "@/lib/activity"
 import {addMoodHistory} from "@/lib/moodHistory"
 import ActivityFeed from "@/components/ActivityFeed"
+import MoodJourney from "@/components/MoodJourney"
 
 export default function Home() {
 
@@ -300,6 +301,8 @@ export default function Home() {
         }
 
         />
+
+        <MoodJourney />
 
         {/* Mood Banner */}
 
